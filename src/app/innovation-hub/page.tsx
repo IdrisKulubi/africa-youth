@@ -2,6 +2,24 @@ import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import InnovationHubSection from "@/components/sections/innovation-hub-section"
 import { Lightbulb, TrendingUp, Award, ArrowRight } from "lucide-react"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "Innovation Hub & Startup Showcase",
+    description: "Apply for the AYBCIF Innovation Hub to showcase your climate-focused startup to investors, corporate partners, and potential customers. Access mentorship, funding opportunities, and media exposure for African youth-led climate tech ventures.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Startup Showcase",
+        "Climate Tech Startups",
+        "Innovation Hub",
+        "Startup Funding",
+        "Pitch Competition",
+        "African Startups",
+        "Climate Solutions",
+    ],
+    canonical: `${SITE_CONFIG.url}/innovation-hub`,
+})
 
 export default function InnovationHubPage() {
     return (

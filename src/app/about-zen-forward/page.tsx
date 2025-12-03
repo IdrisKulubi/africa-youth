@@ -1,6 +1,22 @@
 import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import { Users, Target, Heart, Award } from "lucide-react"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "About Zen Forward Africa",
+    description: "Zen Forward Africa is a pan-African organization dedicated to catalyzing sustainable development through youth empowerment, business innovation, and climate action. 10,000+ youth empowered, 500+ startups supported, $2M+ in funding facilitated.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Pan-African Organization",
+        "Youth Empowerment Africa",
+        "Sustainable Development",
+        "Impact Metrics",
+        "African Innovation",
+    ],
+    canonical: `${SITE_CONFIG.url}/about-zen-forward`,
+})
 
 export default function AboutZenForwardPage() {
     return (

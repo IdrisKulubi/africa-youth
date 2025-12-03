@@ -3,6 +3,23 @@ import Footer from "@/components/sections/footer"
 import SponsorshipSection from "@/components/sections/sponsorship-section"
 import ContactSection from "@/components/sections/contact-section"
 import { Download, Check } from "lucide-react"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "Sponsorship & Partnership Opportunities",
+    description: "Partner with AYBCIF 2026 to reach 2,000+ engaged participants and millions through media coverage. Explore Platinum, Gold, Silver, and Partner sponsorship packages with brand visibility, talent pipeline access, and impact alignment.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Sponsorship Opportunities",
+        "Partnership Packages",
+        "Brand Visibility",
+        "Corporate Partnership",
+        "Event Sponsorship",
+        "Africa Sponsorship",
+    ],
+    canonical: `${SITE_CONFIG.url}/sponsorship`,
+})
 
 export default function SponsorshipPage() {
     return (

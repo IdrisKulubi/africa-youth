@@ -5,10 +5,36 @@ import SpeakersSection from "@/components/sections/speakers-section"
 import RegistrationSection from "@/components/sections/registration-section"
 import InnovationHubSection from "@/components/sections/innovation-hub-section"
 import { Calendar, MapPin, Users } from "lucide-react"
+import { generateMetadata, generateEventSchema, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "AYBCIF 2026 Event - Sustainable Futures",
+    description: "Join AYBCIF 2026 from May 27-29 in Nairobi, Kenya. Experience three days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "AYBCIF 2026",
+        "Nairobi Event",
+        "May 2026",
+        "Climate Forum",
+        "Youth Conference",
+        "Business Summit",
+        "Innovation Showcase",
+    ],
+    canonical: `${SITE_CONFIG.url}/event`,
+    ogType: "event",
+})
+
 
 export default function EventPage() {
+    const eventSchema = generateEventSchema()
+
     return (
         <main className="min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+            />
             <Header />
 
             {/* Hero Section */}

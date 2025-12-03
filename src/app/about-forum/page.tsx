@@ -1,6 +1,22 @@
 import Header from "@/components/sections/header"
 import AboutSection from "@/components/sections/about-section"
 import Footer from "@/components/sections/footer"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "About the Forum",
+    description: "Learn about AYBCIF - the Africa Youth, Business & Climate Innovation Forum. Bridging the gap between youth, business, and climate action to drive sustainable development across Africa.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Forum Mission",
+        "Youth Empowerment",
+        "Climate Change Africa",
+        "Sustainable Business",
+        "Youth Leadership Forum",
+    ],
+    canonical: `${SITE_CONFIG.url}/about-forum`,
+})
 
 export default function AboutForumPage() {
     return (

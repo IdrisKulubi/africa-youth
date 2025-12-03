@@ -2,6 +2,22 @@ import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import ContactSection from "@/components/sections/contact-section"
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "Contact Us",
+    description: "Get in touch with Zen Forward Africa. Contact us for partnerships, sponsorship inquiries, media requests, or general information about AYBCIF 2026. Office hours: Mon-Fri, 9AM-5PM EAT. Located in Nairobi, Kenya.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Contact",
+        "Get in Touch",
+        "Partnership Inquiry",
+        "Nairobi Office",
+        "Contact Information",
+    ],
+    canonical: `${SITE_CONFIG.url}/contact`,
+})
 
 export default function ContactPage() {
     return (

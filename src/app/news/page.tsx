@@ -1,6 +1,23 @@
 import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import { Calendar, FileText, Image as ImageIcon } from "lucide-react"
+import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+    title: "News & Media",
+    description: "Latest news, press releases, and media updates from AYBCIF and Zen Forward Africa. Download our media kit, view event galleries, and subscribe to our newsletter for the latest updates on youth innovation and climate action.",
+    keywords: [
+        ...SITE_CONFIG.keywords,
+        "Latest News",
+        "Press Releases",
+        "Media Kit",
+        "Event Gallery",
+        "Newsletter",
+        "Media Coverage",
+    ],
+    canonical: `${SITE_CONFIG.url}/news`,
+})
 
 export default function NewsPage() {
     return (
