@@ -11,8 +11,6 @@ const footerLinks = {
   resources: [
     { label: "Speakers", href: "#speakers" },
     { label: "Sponsors", href: "#sponsors" },
-    { label: "Gala Night", href: "#gala" },
-    { label: "News", href: "#news" },
   ],
   contact: [
     { label: "Contact Us", href: "#contact" },

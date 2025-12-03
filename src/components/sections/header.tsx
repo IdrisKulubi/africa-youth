@@ -7,13 +7,9 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { label: "Home", href: "#" },
   { label: "About Forum", href: "#about" },
-  { label: "Zen Forward", href: "#zen-forward" },
-  { label: "AYBCIF 2026", href: "#programme" },
   { label: "Sponsorship", href: "#sponsors" },
   { label: "Innovation Hub", href: "#innovation" },
-  { label: "News", href: "#news" },
   { label: "Contact", href: "#contact" },
 ]
 
