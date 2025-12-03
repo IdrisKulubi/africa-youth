@@ -22,7 +22,6 @@ export const metadata: Metadata = generateMetadata({
         "Innovation Showcase",
     ],
     canonical: `${SITE_CONFIG.url}/event`,
-    ogType: "event",
 })
 
 
