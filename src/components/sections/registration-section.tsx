@@ -74,7 +74,7 @@ export default function RegistrationSection() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="w-5 h-5" />
-                  <span>Limited to 150 participants</span>
+                  <span>Limited to 2000 participants</span>
                 </div>
               </div>
             </div>

@@ -39,9 +39,9 @@ export default function Header() {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 md:h-20">
-                    {/* Logo */}
+                    {/* Logo - Top Left */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                             <span className="text-primary-foreground font-bold text-lg">ZF</span>
                         </div>
                         <div className="flex flex-col">
@@ -64,8 +64,8 @@ export default function Header() {
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-1">
+                    {/* Desktop Navigation - Left Side */}
+                    <nav className="hidden lg:flex items-center gap-1 ml-8">
                         {navItems.map((item) => (
                             <Link
                                 key={item.label}
@@ -80,8 +80,11 @@ export default function Header() {
                         ))}
                     </nav>
 
-                    {/* CTA Buttons */}
-                    <div className="hidden md:flex items-center gap-3">
+                    {/* Center Spacer */}
+                    <div className="flex-1" />
+
+                    {/* CTA Buttons - Center Right */}
+                    <div className="hidden md:flex items-center gap-3 mr-4">
                         <ModeToggle />
                         <Button
                             variant="outline"
@@ -101,7 +104,7 @@ export default function Header() {
                         </Button>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button - Right Side on Mobile */}
                     <button
                         className="lg:hidden p-2"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
