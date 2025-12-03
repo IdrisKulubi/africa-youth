@@ -29,7 +29,7 @@ export const staggerFadeIn = (elements: gsap.TweenTarget, staggerDelay = 0.15) =
 /**
  * Parallax scrolling effect
  */
-export const parallaxEffect = (element: gsap.TweenTarget, speed = 0.5) => {
+export const parallaxEffect = (element: string | Element, speed = 0.5) => {
     return gsap.to(element, {
         yPercent: -50 * speed,
         ease: "none",
