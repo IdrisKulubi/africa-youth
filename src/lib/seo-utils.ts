@@ -80,7 +80,7 @@ export function generateMetadata({
             title: metaTitle,
             description: metaDescription,
             images: [absoluteOgImage],
-            creator: "@ZenForwardAfrica", // Update with actual Twitter handle
+            creator: "@FowardZen78940",
         },
     }
 }
@@ -96,10 +96,9 @@ export function generateOrganizationSchema() {
         logo: `${SITE_CONFIG.url}/images/logo.png`,
         description: SITE_CONFIG.description,
         sameAs: [
-            "https://facebook.com/ZenForwardAfrica", // Update with actual social URLs
-            "https://twitter.com/ZenForwardAfrica",
-            "https://linkedin.com/company/zen-forward-africa",
-            "https://instagram.com/zenforwardafrica",
+            "https://www.instagram.com/zen_forward_africa25",
+            "https://www.tiktok.com/@zenforwardafrica0",
+            "https://x.com/FowardZen78940",
         ],
         contactPoint: {
             "@type": "ContactPoint",

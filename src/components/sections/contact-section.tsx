@@ -7,13 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Twitter, Facebook } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Instagram, Twitter } from "lucide-react"
 
 const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "X (Twitter)", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
+  { icon: Twitter, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
 ]
 
 export default function ContactSection() {

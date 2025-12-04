@@ -20,11 +20,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Twitter, label: "X (Twitter)", href: "#" },
-    { icon: Facebook, label: "Facebook", href: "#" },
-    { icon: Youtube, label: "YouTube", href: "#" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
+    { icon: Twitter, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
 ]
 
 export default function Footer() {
