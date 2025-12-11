@@ -1,7 +1,7 @@
 import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import ProgrammeSection from "@/components/sections/programme-section"
-import SpeakersSection from "@/components/sections/speakers-section"
+
 import RegistrationSection from "@/components/sections/registration-section"
 import InnovationHubSection from "@/components/sections/innovation-hub-section"
 import { Calendar, MapPin, Users } from "lucide-react"
@@ -53,10 +53,10 @@ export default function EventPage() {
                         Sustainable Futures
                     </h1>
                     <p className="text-xl sm:text-2xl md:text-3xl text-accent font-semibold mb-8">
-                        Youth × Business × Climate Innovation
+                        How Young People Can Drive Business Growth, Innovation, and Climate Action
                     </p>
                     <p className="text-lg sm:text-xl text-white/80 max-w-4xl mx-auto mb-12">
-                        How Young People Can Drive Business Growth, Innovation, and Climate Action
+                        Organized by Azenath Cherono Bor, in collaboration with Partners
                     </p>
 
                     {/* Event Details Cards */}
@@ -65,7 +65,7 @@ export default function EventPage() {
                             <Calendar className="w-6 h-6 text-accent" />
                             <div className="text-left">
                                 <p className="text-white/60 text-sm">Date</p>
-                                <p className="text-white font-semibold">27-29 May 2026</p>
+                                <p className="text-white font-semibold">28-29 May 2026</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
@@ -125,7 +125,7 @@ export default function EventPage() {
             <ProgrammeSection />
 
             {/* Speakers Section */}
-            <SpeakersSection />
+
 
             {/* Participating Startups */}
             <InnovationHubSection />
@@ -153,7 +153,7 @@ export default function EventPage() {
                                     <Calendar className="w-5 h-5 text-accent mt-1" />
                                     <div>
                                         <p className="font-semibold">Dates</p>
-                                        <p className="text-muted-foreground">27th - 29th May 2026</p>
+                                        <p className="text-muted-foreground">28th - 29th May 2026</p>
                                     </div>
                                 </div>
                             </div>

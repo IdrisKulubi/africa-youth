@@ -66,7 +66,7 @@ const sponsorPackages = [
 const partners = [
   { name: "UNEP", logo: "/images/un.png" },
   { name: "UNDP", logo: "/images/undp.png" },
-  
+
 ]
 
 export default function SponsorshipSection() {
@@ -92,9 +92,8 @@ export default function SponsorshipSection() {
           {sponsorPackages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative bg-background rounded-2xl p-6 border ${
-                pkg.featured ? "border-accent shadow-xl ring-2 ring-accent/20" : "border-border hover:border-primary/50"
-              } transition-all`}
+              className={`relative bg-background rounded-3xl p-8 border ${pkg.featured ? "border-accent shadow-2xl ring-2 ring-accent/20 scale-105" : "border-border hover:border-primary/50 hover:shadow-xl hover:scale-105"
+                } transition-all duration-300`}
             >
               {pkg.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
@@ -102,26 +101,24 @@ export default function SponsorshipSection() {
                 </div>
               )}
               <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                  pkg.color === "accent"
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${pkg.color === "accent"
                     ? "bg-accent/20"
                     : pkg.color === "secondary"
                       ? "bg-secondary/20"
                       : pkg.color === "primary"
                         ? "bg-primary/20"
                         : "bg-muted"
-                }`}
+                  }`}
               >
                 <pkg.icon
-                  className={`w-6 h-6 ${
-                    pkg.color === "accent"
+                  className={`w-6 h-6 ${pkg.color === "accent"
                       ? "text-accent"
                       : pkg.color === "secondary"
                         ? "text-secondary"
                         : pkg.color === "primary"
                           ? "text-primary"
                           : "text-muted-foreground"
-                  }`}
+                    }`}
                 />
               </div>
               <h3 className="text-lg font-bold text-foreground mb-4">{pkg.name}</h3>

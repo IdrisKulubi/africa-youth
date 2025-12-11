@@ -1,10 +1,18 @@
 import { Target, CheckCircle2, Award, Users, Lightbulb, Eye } from "lucide-react"
 
 const objectives = [
-  "Inspire and equip youth with knowledge on entrepreneurship, innovation and climate action",
-  "Provide a platform for dialogue, mentorship and networking between youth, corporates, NGOs and policymakers",
-  "Raise awareness of the interconnection between business growth and environmental sustainability",
-  "Showcase youth-led innovations and green startups",
+  "To inspire and equip youth with knowledge on entrepreneurship, innovation and climate action.",
+  "To provide a platform for dialogue, mentorship and networking between youth, corporates, NGOs and policymakers.",
+  "To raise awareness of the interconnection between business growth and environmental sustainability.",
+  "To showcase youth-led innovations and green startups.",
+]
+
+const targetAudience = [
+  "University & college students",
+  "Young entrepreneurs and professionals",
+  "Climate activists and innovators",
+  "NGOs, corporates, and government agencies",
+  "Media and development partners",
 ]
 
 const outcomes = [
@@ -39,9 +47,9 @@ export default function AboutSection() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
                   <Eye className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Vision</h4>
@@ -53,9 +61,9 @@ export default function AboutSection() {
             </div>
 
             {/* Mission */}
-            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl p-8 border border-accent/20">
+            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-accent-foreground" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Mission</h4>
@@ -150,6 +158,24 @@ export default function AboutSection() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Target Audience */}
+        <div className="mt-8 bg-card rounded-2xl p-8 border border-border">
+          <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+              <Users className="w-5 h-5 text-primary" />
+            </div>
+            Target Audience
+          </h3>
+          <div className="flex flex-wrap gap-4">
+            {targetAudience.map((audience, i) => (
+              <div key={i} className="flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full">
+                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <span className="text-sm text-foreground">{audience}</span>
+              </div>
+            ))}
           </div>
         </div>
 

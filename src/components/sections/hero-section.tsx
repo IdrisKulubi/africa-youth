@@ -50,7 +50,7 @@ export default function HeroSection() {
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8">
                     <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                     <span className="text-white/90 text-sm font-medium">Registration Now Open</span>
                 </div>
@@ -68,11 +68,11 @@ export default function HeroSection() {
 
                 {/* Date & Location */}
                 <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5">
                         <Calendar className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">27th - 29th May 2026</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5">
                         <MapPin className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">Nairobi, Kenya</span>
                     </div>
@@ -111,7 +111,7 @@ export default function HeroSection() {
                         ].map((item) => (
                             <div
                                 key={item.label}
-                                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 min-w-[90px]"
+                                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-4 min-w-[90px]"
                             >
                                 <span className="block text-3xl sm:text-4xl font-bold text-white">
                                     {item.value.toString().padStart(2, "0")}

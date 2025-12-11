@@ -15,7 +15,7 @@ const footerLinks = {
     contact: [
         { label: "Contact Us", href: "#contact" },
         { label: "info@aybcif.org", href: "mailto:info@aybcif.org" },
-        { label: "+254 700 000 000", href: "tel:+254700000000" },
+        { label: "+254 768 006 969", href: "tel:+254 768 006 969" },
     ],
 }
 

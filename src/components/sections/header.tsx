@@ -8,13 +8,8 @@ import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/theme/mode-toggle"
 
 const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About Forum", href: "/about-forum" },
-    { label: "About Us", href: "/about-zen-forward" },
     { label: "Event 2026", href: "/event" },
     { label: "Sponsorship", href: "/sponsorship" },
-    { label: "Innovation Hub", href: "/innovation-hub" },
-    { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
 ]
 
@@ -41,9 +36,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo - Top Left */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary-foreground font-bold text-lg">ZF</span>
-                        </div>
+                        
                         <div className="flex flex-col">
                             <span
                                 className={cn(
@@ -86,19 +79,7 @@ export default function Header() {
                     {/* CTA Buttons - Center Right */}
                     <div className="hidden md:flex items-center gap-3 mr-4">
                         <ModeToggle />
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className={cn(
-                                "border-2 transition-colors",
-                                isScrolled
-                                    ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                                    : "border-white text-white hover:bg-white hover:text-foreground",
-                            )}
-                            asChild
-                        >
-                            <Link href="/sponsorship">Become a Partner</Link>
-                        </Button>
+                       
                         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
                             <Link href="/event#registration">Register Now</Link>
                         </Button>
