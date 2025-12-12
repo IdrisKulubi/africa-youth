@@ -14,7 +14,7 @@ const footerLinks = {
     ],
     contact: [
         { label: "Contact Us", href: "#contact" },
-        { label: "info@aybcif.org", href: "mailto:info@aybcif.org" },
+        { label: "zenforwardafrica9@gmail.com", href: "mailto:zenforwardafrica9@gmail.com" },
         { label: "+254 768 006 969", href: "tel:+254 768 006 969" },
     ],
 }

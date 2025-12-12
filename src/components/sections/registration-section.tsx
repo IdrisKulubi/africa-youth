@@ -66,7 +66,7 @@ export default function RegistrationSection() {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5" />
-                  <span>August 14-16, 2026</span>
+                  <span>May 28-29, 2026</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5" />
