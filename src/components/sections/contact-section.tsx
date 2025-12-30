@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 import { Mail, Phone, MapPin, Send, Instagram, Twitter } from "lucide-react"
 
 const socialLinks = [
@@ -60,7 +61,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Email</span>
-                    <span className="font-medium text-foreground">info@aybcif.org</span>
+                    <span className="font-medium text-foreground">zenforwardafrica9@gmail.com</span>
                   </div>
                 </a>
 
@@ -73,7 +74,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Phone / WhatsApp</span>
-                    <span className="font-medium text-foreground">+254 700 000 000</span>
+                    <span className="font-medium text-foreground">+254 768 006 969</span>
                   </div>
                 </a>
 
@@ -108,7 +109,7 @@ export default function ContactSection() {
 
             {/* Map Placeholder */}
             <div className="rounded-xl overflow-hidden border border-border aspect-video bg-muted">
-              <img
+              <Image
                 src="/placeholder.svg?height=400&width=600"
                 alt="Venue Location Map"
                 className="w-full h-full object-cover"
