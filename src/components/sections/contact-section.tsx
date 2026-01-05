@@ -66,7 +66,7 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href="tel:+254700000000"
+                  href="tel:+254 768 006 969"
                   className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -110,9 +110,11 @@ export default function ContactSection() {
             {/* Map Placeholder */}
             <div className="rounded-xl overflow-hidden border border-border aspect-video bg-muted">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/placeholder.svg"
                 alt="Venue Location Map"
                 className="w-full h-full object-cover"
+                width={600}
+                height={400}
               />
             </div>
           </div>

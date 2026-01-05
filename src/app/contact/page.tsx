@@ -1,7 +1,6 @@
 import Header from "@/components/sections/header"
 import Footer from "@/components/sections/footer"
 import ContactSection from "@/components/sections/contact-section"
-import { Mail, Phone, MapPin, Twitter, Instagram } from "lucide-react"
 import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
 import { Metadata } from "next"
 
@@ -24,228 +23,118 @@ export default function ContactPage() {
         <main className="min-h-screen">
             <Header />
 
-            {/* Hero Section */}
-            <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+            {/* Hero Section - Compact */}
+            <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-24">
                 <div className="absolute inset-0 z-0">
                     <img src="/images/nairobi.png" alt="Contact Background" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/70 to-background" />
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-                        Get in <span className="text-accent">Touch</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                        Let&apos;s <span className="text-accent">Connect</span>
                     </h1>
-                    <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
-                        We'd love to hear from you. Reach out for partnerships, inquiries, or general information.
+                    <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+                        Partnerships, inquiries, or just saying hello — we&apos;re here to help.
                     </p>
                 </div>
             </section>
 
-            {/* Contact Information */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-3 gap-8 mb-20">
-                        {/* Email */}
-                        <div className="text-center space-y-4">
-                            <div className="w-16 h-16 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center">
-                                <Mail className="w-8 h-8 text-accent" />
-                            </div>
-                            <h3 className="text-xl font-semibold">Email Us</h3>
-                            <div className="space-y-2 text-muted-foreground">
-                                <p>General Inquiries:</p>
-                                <a href="mailto:info@zenforwardafrica.org" className="block text-accent hover:underline">
-                                    info@zenforwardafrica.org
-                                </a>
-                                <p className="mt-4">Partnerships:</p>
-                                <a href="mailto:partnerships@zenforwardafrica.org" className="block text-accent hover:underline">
-                                    partnerships@zenforwardafrica.org
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Phone */}
-                        <div className="text-center space-y-4">
-                            <div className="w-16 h-16 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center">
-                                <Phone className="w-8 h-8 text-accent" />
-                            </div>
-                            <h3 className="text-xl font-semibold">Call Us</h3>
-                            <div className="space-y-2 text-muted-foreground">
-                                <p>Office Hours: Mon-Fri, 9AM-5PM EAT</p>
-                                <a href="tel:+254123456789" className="block text-accent hover:underline text-lg font-medium">
-                                    +254 123 456 789
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Location */}
-                        <div className="text-center space-y-4">
-                            <div className="w-16 h-16 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center">
-                                <MapPin className="w-8 h-8 text-accent" />
-                            </div>
-                            <h3 className="text-xl font-semibold">Visit Us</h3>
-                            <div className="space-y-2 text-muted-foreground">
-                                <p>Zen Forward Africa</p>
-                                <p>Nairobi, Kenya</p>
-                                <button className="mt-2 text-accent hover:underline font-medium">
-                                    Get Directions →
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Social Media */}
-                    <div className="text-center space-y-6">
-                        <h3 className="text-2xl font-semibold">Follow Us</h3>
-                        <div className="flex justify-center gap-4">
-                            <a
-                                href="https://www.instagram.com/zen_forward_africa25"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-                            >
-                                <Instagram className="w-5 h-5" />
-                            </a>
-                            <a
-                                href="https://x.com/FowardZen78940"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-                            >
-                                <Twitter className="w-5 h-5" />
-                            </a>
-                            <a
-                                href="https://www.tiktok.com/@zenforwardafrica0"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-                            >
-                                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+            {/* Quick Contact Options */}
+            <section className="py-12 px-4 bg-background -mt-8 relative z-20">
+                <div className="max-w-4xl mx-auto">
+                    <div className="grid sm:grid-cols-3 gap-4">
+                        <a
+                            href="mailto:zenforwardafrica9@gmail.com"
+                            className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                            </a>
+                            </div>
+                            <div>
+                                <span className="block text-sm text-muted-foreground">Email</span>
+                                <span className="font-medium text-foreground">zenforwardafrica9@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a
+                            href="tel:+254768006969"
+                            className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span className="block text-sm text-muted-foreground">Phone / WhatsApp</span>
+                                <span className="font-medium text-foreground">+254 768 006 969</span>
+                            </div>
+                        </a>
+
+                        <div className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border">
+                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span className="block text-sm text-muted-foreground">Event Location</span>
+                                <span className="font-medium text-foreground">Nairobi, Kenya</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Form & Map */}
+            {/* Main Contact Form */}
             <ContactSection />
 
-            {/* Partnership Inquiry */}
-            <section className="py-20 px-4 bg-card/50">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Partnership Inquiry</h2>
-                        <p className="text-lg text-muted-foreground">
-                            Interested in partnering with AYBCIF? Fill out the form below and we'll get back to you shortly.
-                        </p>
-                    </div>
-
-                    <form className="space-y-6">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label htmlFor="org-name" className="block text-sm font-medium">
-                                    Organization Name *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="org-name"
-                                    required
-                                    className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="contact-name" className="block text-sm font-medium">
-                                    Contact Person *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="contact-name"
-                                    required
-                                    className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label htmlFor="email" className="block text-sm font-medium">
-                                    Email Address *
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    required
-                                    className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="phone" className="block text-sm font-medium">
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="partnership-type" className="block text-sm font-medium">
-                                Partnership Interest *
-                            </label>
-                            <select
-                                id="partnership-type"
-                                required
-                                className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent"
-                            >
-                                <option value="">Select partnership type</option>
-                                <option value="platinum">Platinum Sponsor</option>
-                                <option value="gold">Gold Sponsor</option>
-                                <option value="silver">Silver Sponsor</option>
-                                <option value="partner">Partner</option>
-                                <option value="media">Media Partner</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="message" className="block text-sm font-medium">
-                                Message *
-                            </label>
-                            <textarea
-                                id="message"
-                                required
-                                rows={6}
-                                placeholder="Tell us about your organization and partnership interests..."
-                                className="w-full px-4 py-3 rounded-xl border-2 border-border bg-background focus:outline-none focus:border-accent resize-none"
-                            />
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="w-full px-8 py-4 bg-accent text-accent-foreground rounded-full font-semibold hover:bg-accent/90 transition-colors"
+            {/* Social Links */}
+            <section className="py-16 px-4 bg-card/50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-2xl font-bold mb-6">Follow Our Journey</h2>
+                    <div className="flex justify-center gap-4">
+                        <a
+                            href="https://www.instagram.com/zen_forward_africa25"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                            aria-label="Instagram"
                         >
-                            Submit Inquiry
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            {/* FAQ Preview */}
-            <section className="py-20 px-4">
-                <div className="max-w-4xl mx-auto text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-                    <p className="text-lg text-muted-foreground">
-                        Have questions? Check out our FAQ section or reach out directly.
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/FowardZen78940"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                            aria-label="X (Twitter)"
+                        >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@zenforwardafrica0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                            aria-label="TikTok"
+                        >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p className="mt-6 text-muted-foreground">
+                        Stay updated on AYBCIF 2026 news and announcements
                     </p>
-                    <a
-                        href="/about-forum"
-                        className="inline-block px-8 py-3 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                        View FAQs
-                    </a>
                 </div>
             </section>
 
@@ -253,3 +142,4 @@ export default function ContactPage() {
         </main>
     )
 }
+
