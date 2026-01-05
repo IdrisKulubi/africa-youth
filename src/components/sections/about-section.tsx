@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Target, CheckCircle, Medal, Users, Lightbulb, Eye, Handshake } from "@phosphor-icons/react"
+import { TargetIcon, CheckCircleIcon, MedalIcon, UsersIcon, LightbulbIcon, EyeIcon, HandshakeIcon } from "@phosphor-icons/react"
 
 // Register ScrollTrigger
 if (typeof window !== "undefined") {
@@ -262,7 +262,7 @@ export default function AboutSection() {
             <div ref={visionRef} className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Eye className="w-6 h-6 text-primary-foreground" weight="fill" />
+                  <EyeIcon className="w-6 h-6 text-primary-foreground" weight="fill" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Vision</h4>
               </div>
@@ -276,7 +276,7 @@ export default function AboutSection() {
             <div ref={missionRef} className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Lightbulb className="w-6 h-6 text-accent-foreground" weight="fill" />
+                  <LightbulbIcon className="w-6 h-6 text-accent-foreground" weight="fill" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Mission</h4>
               </div>
@@ -295,7 +295,7 @@ export default function AboutSection() {
           <div ref={backgroundRef}>
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
               <div className="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
-                <Target className="w-6 h-6" weight="duotone" />
+                <TargetIcon className="w-6 h-6" weight="duotone" />
               </div>
               Background & Rationale
             </h3>
@@ -313,7 +313,7 @@ export default function AboutSection() {
 
             <div className="mt-8 bg-card rounded-xl p-6 border border-border">
               <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Handshake className="w-5 h-5 text-accent" weight="fill" />
+                <HandshakeIcon className="w-5 h-5 text-accent" weight="fill" />
                 Organized In Partnership With
               </h4>
               <div className="flex flex-wrap gap-4 items-center">
@@ -342,7 +342,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div ref={objectivesRef} className="bg-card rounded-2xl p-8 border border-border shadow-sm">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-secondary" weight="fill" />
+              <CheckCircleIcon className="w-6 h-6 text-secondary" weight="fill" />
               Our Objectives
             </h3>
             <ul className="space-y-4">
@@ -359,13 +359,13 @@ export default function AboutSection() {
 
           <div ref={outcomesRef} className="bg-card rounded-2xl p-8 border border-border shadow-sm">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <Medal className="w-6 h-6 text-primary" weight="duotone" />
+              <MedalIcon className="w-6 h-6 text-primary" weight="duotone" />
               Expected Outcomes
             </h3>
             <ul className="space-y-3">
               {outcomes.map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <CheckCircle className="w-5 h-5 text-primary shrink-0" weight="fill" />
+                  <CheckCircleIcon className="w-5 h-5 text-primary shrink-0" weight="fill" />
                   {item}
                 </li>
               ))}
@@ -377,14 +377,14 @@ export default function AboutSection() {
         <div ref={audienceRef} className="bg-card rounded-2xl p-8 border border-border">
           <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
             <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-              <Users className="w-5 h-5 text-primary" />
+              <UsersIcon className="w-5 h-5 text-primary" />
             </div>
             Target Audience
           </h3>
           <div className="flex flex-wrap gap-4">
             {targetAudience.map((audience, i) => (
               <div key={i} className="audience-tag flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full hover:border-primary/50 transition-colors">
-                <CheckCircle className="w-4 h-4 text-primary" weight="fill" />
+                <CheckCircleIcon className="w-4 h-4 text-primary" weight="fill" />
                 <span className="text-sm text-foreground">{audience}</span>
               </div>
             ))}

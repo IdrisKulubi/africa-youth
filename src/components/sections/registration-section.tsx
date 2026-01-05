@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle, Calendar, MapPin, Users, Ticket, Wallet } from "@phosphor-icons/react"
+import { CheckCircleIcon, CalendarIcon, MapPinIcon, UsersIcon, TicketIcon, WalletIcon } from "@phosphor-icons/react"
 
 // Register ScrollTrigger
 if (typeof window !== "undefined") {
@@ -156,13 +156,13 @@ export default function RegistrationSection() {
             {/* What You Get */}
             <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border">
               <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Ticket className="w-5 h-5 text-primary" />
+                <TicketIcon className="w-5 h-5 text-primary" />
                 What You Get
               </h3>
               <ul className="space-y-3">
                 {eventBenefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" weight="fill" />
+                    <CheckCircleIcon className="w-4 h-4 text-primary mt-0.5 shrink-0" weight="fill" />
                     {benefit}
                   </li>
                 ))}
@@ -171,11 +171,11 @@ export default function RegistrationSection() {
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <CalendarIcon className="w-4 h-4" />
                 <span>May 28-29, 2026</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
+                <MapPinIcon className="w-4 h-4" />
                 <span>Nairobi, Kenya</span>
               </div>
             </div>

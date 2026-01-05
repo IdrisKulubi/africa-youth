@@ -8,11 +8,11 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
-import { Envelope, Phone, MapPin, PaperPlaneRight, InstagramLogo, TwitterLogo } from "@phosphor-icons/react"
+import { EnvelopeIcon, PhoneIcon, MapPinIcon, PaperPlaneRightIcon, InstagramLogoIcon, TwitterLogoIcon } from "@phosphor-icons/react"
 
 const socialLinks = [
-  { icon: InstagramLogo, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
-  { icon: TwitterLogo, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
+  { icon: InstagramLogoIcon, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
+  { icon: TwitterLogoIcon, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
 ]
 
 export default function ContactSection() {
@@ -57,7 +57,7 @@ export default function ContactSection() {
                   className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Envelope className="w-5 h-5 text-primary" />
+                    <EnvelopeIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Email</span>
@@ -70,7 +70,7 @@ export default function ContactSection() {
                   className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Phone className="w-5 h-5 text-primary" />
+                    <PhoneIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Phone / WhatsApp</span>
@@ -80,7 +80,7 @@ export default function ContactSection() {
 
                 <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
+                    <MapPinIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Venue Location</span>
@@ -169,7 +169,7 @@ export default function ContactSection() {
               </div>
 
               <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                <PaperPlaneRight className="mr-2 w-4 h-4" />
+                <PaperPlaneRightIcon className="mr-2 w-4 h-4" />
                 Send Message
               </Button>
             </form>

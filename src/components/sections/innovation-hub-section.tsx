@@ -1,8 +1,7 @@
 "use client"
 
-import { Rocket, CheckCircle, Trophy, ArrowRight } from "@phosphor-icons/react"
+import { RocketIcon, CheckCircleIcon, TrophyIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
@@ -82,14 +81,14 @@ export default function InnovationHubSection() {
           <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <Rocket className="w-6 h-6 text-primary-foreground" weight="fill" />
+                <RocketIcon className="w-6 h-6 text-primary-foreground" weight="fill" />
               </div>
               <h3 className="text-xl font-bold text-foreground">Application Criteria</h3>
             </div>
             <ul className="space-y-4 mb-8">
               {criteria.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" weight="fill" />
+                  <CheckCircleIcon   className="w-5 h-5 text-primary shrink-0 mt-0.5" weight="fill" />
                   <span className="text-muted-foreground">{item}</span>
                 </li>
               ))}
@@ -98,7 +97,7 @@ export default function InnovationHubSection() {
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20">
-                  Apply Now <ArrowRight className="w-4 h-4 ml-2" />
+                  Apply Now <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px]">
@@ -161,7 +160,7 @@ export default function InnovationHubSection() {
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-accent-foreground" weight="fill" />
+                <TrophyIcon className="w-6 h-6 text-accent-foreground" weight="fill" />
               </div>
               <h3 className="text-xl font-bold text-foreground">What Selected Startups Get</h3>
             </div>

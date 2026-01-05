@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react"
+import { CalendarIcon, MapPinIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import Link from "next/link"
 
 export default function HeroSection() {
@@ -69,11 +69,11 @@ export default function HeroSection() {
                 {/* Date & Location */}
                 <div className="flex flex-wrap items-center justify-center gap-6 mb-10 animate-fade-in-up animation-delay-300">
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
-                        <Calendar className="w-5 h-5 text-accent" />
+                        <CalendarIcon className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">28th - 29th May 2026</span>
                     </div>
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
-                        <MapPin className="w-5 h-5 text-accent" />
+                        <MapPinIcon className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">Nairobi, Kenya</span>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function HeroSection() {
                         asChild
                     >
                         <Link href="#registration">
-                            Register Now <ArrowRight className="ml-2 w-5 h-5" />
+                            Register Now <ArrowRightIcon className="ml-2 w-5 h-5" />
                         </Link>
                     </Button>
                     <Button

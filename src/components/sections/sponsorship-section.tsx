@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Check, Star, Medal, Lightning, Buildings, ArrowRight } from "@phosphor-icons/react"
+import { CheckIcon, StarIcon, MedalIcon, LightningIcon, BuildingIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -16,7 +16,7 @@ const sponsorPackages = [
   {
     name: "Gold Sponsor",
     price: "Ksh 3,000,000",
-    icon: Star,
+    icon: StarIcon,
     color: "accent",
     benefits: [
       "Premium logo placement on all materials",
@@ -33,7 +33,7 @@ const sponsorPackages = [
   {
     name: "Silver Sponsor",
     price: "Ksh 1,500,000",
-    icon: Medal,
+    icon: MedalIcon,
     color: "secondary",
     benefits: [
       "Logo on event materials & banners",
@@ -49,7 +49,7 @@ const sponsorPackages = [
   {
     name: "Bronze Sponsor",
     price: "Ksh 500,000",
-    icon: Lightning,
+    icon: LightningIcon,
     color: "primary",
     benefits: [
       "Logo on event website & program",
@@ -64,7 +64,7 @@ const sponsorPackages = [
   {
     name: "Exhibitor Booth",
     price: "Ksh 100,000",
-    icon: Buildings,
+    icon: BuildingIcon,
     color: "muted",
     benefits: [
       "Exhibition space for 3 days",
@@ -200,7 +200,7 @@ export default function SponsorshipSection() {
                 <ul className="space-y-2 mb-6">
                   {pkg.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" weight="bold" />
+                      <CheckIcon className="w-4 h-4 text-primary mt-0.5 shrink-0" weight="bold" />
                       {benefit}
                     </li>
                   ))}
@@ -214,7 +214,7 @@ export default function SponsorshipSection() {
                   asChild
                 >
                   <Link href="#contact">
-                    Enquire Now <ArrowRight className="w-4 h-4 ml-2" />
+                    Enquire Now <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
               </div>
@@ -230,7 +230,7 @@ export default function SponsorshipSection() {
           </p>
           <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
             <Link href="#contact">
-              Contact Our Team <ArrowRight className="w-4 h-4 ml-2" />
+              Contact Our Team <ArrowRightIcon className="w-4 h-4 ml-2" />
             </Link>
           </Button>
         </div>

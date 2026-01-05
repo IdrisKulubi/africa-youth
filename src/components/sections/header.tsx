@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { List, X } from "@phosphor-icons/react"
+import { ListIcon, XIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/theme/mode-toggle"
@@ -78,9 +78,9 @@ export default function Header() {
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? (
-                            <X className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
+                            <XIcon className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
                         ) : (
-                            <List className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
+                            <ListIcon className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
                         )}
                     </button>
                 </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, MapPin, Sparkle, Ticket, Users } from "@phosphor-icons/react"
+import { CalendarIcon, ClockIcon, MapPinIcon, SparkleIcon, TicketIcon, UsersIcon } from "@phosphor-icons/react"
 import Link from "next/link"
 
 export default function GalaSection() {
@@ -16,7 +16,7 @@ export default function GalaSection() {
           {/* Content */}
           <div>
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent rounded-full px-4 py-2 mb-6">
-              <Sparkle className="w-4 h-4" />
+              <SparkleIcon className="w-4 h-4" />
               <span className="text-sm font-semibold">Premium Event</span>
             </div>
 
@@ -34,28 +34,28 @@ export default function GalaSection() {
             {/* Event Details */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3 bg-background/10 rounded-xl p-4">
-                <Calendar className="w-5 h-5 text-accent" />
+                <CalendarIcon className="w-5 h-5 text-accent" />
                 <div>
                   <span className="block text-sm text-background/60">Date</span>
                   <span className="font-semibold">May 29, 2026</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-background/10 rounded-xl p-4">
-                <Clock className="w-5 h-5 text-accent" />
+                <ClockIcon className="w-5 h-5 text-accent" />
                 <div>
                   <span className="block text-sm text-background/60">Time</span>
                   <span className="font-semibold">7:00 PM - 11:00 PM</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-background/10 rounded-xl p-4">
-                <MapPin className="w-5 h-5 text-accent" />
+                <MapPinIcon className="w-5 h-5 text-accent" />
                 <div>
                   <span className="block text-sm text-background/60">Venue</span>
                   <span className="font-semibold">Nairobi, Kenya</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-background/10 rounded-xl p-4">
-                <Users className="w-5 h-5 text-accent" />
+                <UsersIcon className="w-5 h-5 text-accent" />
                 <div>
                   <span className="block text-sm text-background/60">Dress Code</span>
                   <span className="font-semibold">Smart / Cocktail</span>
@@ -76,7 +76,7 @@ export default function GalaSection() {
                   "Partner Recognition",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-background/80">
-                    <Sparkle className="w-4 h-4 text-accent" />
+                    <SparkleIcon className="w-4 h-4 text-accent" />
                     {item}
                   </li>
                 ))}
@@ -86,7 +86,7 @@ export default function GalaSection() {
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
                 <Link href="#registration">
-                  <Ticket className="mr-2 w-5 h-5" />
+                  <TicketIcon className="mr-2 w-5 h-5" />
                   Get Gala Tickets
                 </Link>
               </Button>

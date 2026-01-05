@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar, ArrowRight } from "@phosphor-icons/react"
+import { CalendarIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -49,7 +49,7 @@ export default function NewsSection() {
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground self-start sm:self-auto bg-transparent"
           >
-            View All News <ArrowRight className="ml-2 w-4 h-4" />
+            View All News <ArrowRightIcon className="ml-2 w-4 h-4" />
           </Button>
         </div>
 
@@ -72,7 +72,7 @@ export default function NewsSection() {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                  <Calendar className="w-4 h-4" />
+                  <CalendarIcon className="w-4 h-4" />
                   {item.date}
                 </div>
                 <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -83,7 +83,7 @@ export default function NewsSection() {
                   href="#"
                   className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4 hover:gap-2 transition-all"
                 >
-                  Read More <ArrowRight className="w-4 h-4" />
+                  Read More <ArrowRightIcon className="w-4 h-4" />
                 </Link>
               </div>
             </article>

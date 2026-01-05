@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Plant, InstagramLogo, LinkedinLogo, TwitterLogo, FacebookLogo, YoutubeLogo, ArrowUp } from "@phosphor-icons/react"
+import { InstagramLogoIcon, TwitterLogoIcon,  ArrowUpIcon } from "@phosphor-icons/react"
 
 const footerLinks = {
     quickLinks: [
@@ -22,8 +22,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-    { icon: InstagramLogo, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
-    { icon: TwitterLogo, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
+    { icon: InstagramLogoIcon, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
+    { icon: TwitterLogoIcon, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
 ]
 
 export default function Footer() {
@@ -124,7 +124,7 @@ export default function Footer() {
                                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
                                 aria-label="Back to top"
                             >
-                                <ArrowUp className="w-5 h-5 text-primary-foreground" />
+                                <ArrowUpIcon className="w-5 h-5 text-primary-foreground" />
                             </a>
                         </div>
                     </div>
