@@ -36,25 +36,11 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo - Top Left */}
                     <Link href="/" className="flex items-center gap-2">
-
-                        <div className="flex flex-col">
-                            <span
-                                className={cn(
-                                    "font-bold text-sm leading-tight transition-colors",
-                                    isScrolled ? "text-foreground" : "text-white",
-                                )}
-                            >
-                                Zen Forward
-                            </span>
-                            <span
-                                className={cn(
-                                    "text-xs leading-tight transition-colors",
-                                    isScrolled ? "text-muted-foreground" : "text-white/70",
-                                )}
-                            >
-                                Africa
-                            </span>
-                        </div>
+                        <img
+                            src="/africa-youth.png"
+                            alt="Africa Youth Forum Logo"
+                            className="h-24 w-24 md:h-24 md:w-24 object-contain"
+                        />
                     </Link>
 
                     {/* Desktop Navigation - Left Side */}

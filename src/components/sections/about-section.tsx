@@ -246,8 +246,12 @@ export default function AboutSection() {
 
         <div className="mb-20">
           <div ref={zenRef} className="text-center mb-10">
-            <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
-              <img src="/images/zen-logo.png" alt="Zen Forward Africa" className="w-8 h-8 object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
+            <div className="inline-flex items-center justify-center mb-4">
+              <img
+                src="/africa-youth.png"
+                alt="Africa Youth Forum Logo"
+                className="w-24 h-24 md:w-24 md:h-24 object-contain"
+              />
             </div>
             <h3 className="text-3xl font-bold text-foreground mb-2">Zen Forward Africa</h3>
             <p className="text-muted-foreground text-lg">The driving force behind AYBCIF</p>
