@@ -1,8 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Clock, Coffee, Users, Microphone, Medal, Confetti } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
+
+// Register ScrollTrigger
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const days = [
   { id: "day1", label: "Day 1 - May 28" },
@@ -29,14 +36,14 @@ const programmeData = {
     {
       time: "09:20 - 09:40",
       title: "Keynote Address",
-      description: "Positioning Youth at the Centre of Africa’s Sustainable Economic Transition. (Govt Rep & UN Partner)",
+      description: "Positioning Youth at the Centre of Africa's Sustainable Economic Transition. (Govt Rep & UN Partner)",
       icon: Microphone,
       type: "session",
     },
     {
       time: "10:00 - 11:00",
       title: "High-Level Panel 1: Policy Dialogue",
-      description: "Youth, Business & Climate: Shaping Africa’s New Economic Frontier. (UN experts, Policymakers, Private sector)",
+      description: "Youth, Business & Climate: Shaping Africa's New Economic Frontier. (UN experts, Policymakers, Private sector)",
       icon: Users,
       type: "panel",
     },
@@ -100,14 +107,14 @@ const programmeData = {
     },
     {
       time: "09:15 - 10:30",
-      title: "Panel III: Digital Transformation",
-      description: "Digital Transformation, AI & Emerging Technologies in Climate Action",
+      title: "Panel III: Youth & Business Innovation",
+      description: "Entrepreneurship in the Green Economy",
       icon: Users,
       type: "panel",
     },
     {
       time: "10:30 - 11:00",
-      title: "Coffee Break",
+      title: "Health Break",
       description: "",
       icon: Coffee,
       type: "break",
@@ -121,15 +128,15 @@ const programmeData = {
     },
     {
       time: "12:30 - 13:30",
-      title: "Lunch & Side Exhibitions",
-      description: "Tech demos, green art and youth innovation showcases",
+      title: "Lunch & Networking",
+      description: "",
       icon: Coffee,
       type: "break",
     },
     {
       time: "13:30 - 15:00",
-      title: "Capacity-Building Workshops",
-      description: "Climate Entrepreneurship, Urban Sustainability, Leadership Skills (Parallel Sessions)",
+      title: "Skill Building Workshops",
+      description: "Pitching, Climate Storytelling, Fundraising, Market Access (Parallel Tracks)",
       icon: Users,
       type: "workshop",
     },
@@ -142,9 +149,9 @@ const programmeData = {
     },
     {
       time: "16:00 - 17:00",
-      title: "Awards Rehearsal & Transition",
-      description: "Transition to Gala Setup",
-      icon: Users,
+      title: "Closing Ceremony & Announcement of Winners",
+      description: "",
+      icon: Medal,
       type: "session",
     },
   ],
@@ -172,7 +179,7 @@ const programmeData = {
     },
     {
       time: "19:40 - 20:20",
-      title: "Dinner Service",
+      title: "Gourmet Dinner Service",
       description: "",
       icon: Coffee,
       type: "gala",
@@ -208,53 +215,110 @@ const programmeData = {
   ],
 }
 
-export default function ProgrammeSection() {
-  const [activeDay, setActiveDay] = useState("day1")
+const typeColors: Record<string, string> = {
+  break: "bg-muted text-muted-foreground",
+  session: "bg-primary/10 text-primary",
+  panel: "bg-secondary/20 text-secondary-foreground",
+  workshop: "bg-accent/10 text-accent",
+  showcase: "bg-destructive/10 text-destructive",
+  gala: "bg-gradient-to-r from-accent/20 to-primary/20 text-foreground",
+}
 
-  const getTypeStyles = (type: string) => {
-    switch (type) {
-      case "session":
-        return "bg-primary/10 border-primary/30"
-      case "panel":
-        return "bg-secondary/10 border-secondary/30"
-      case "workshop":
-        return "bg-accent/10 border-accent/30"
-      case "showcase":
-        return "bg-accent/10 border-accent/30"
-      case "gala":
-        return "bg-accent/20 border-accent/50"
-      default:
-        return "bg-muted border-muted-foreground/20"
-    }
-  }
+export default function ProgrammeSection() {
+  const [selectedDay, setSelectedDay] = useState("day1")
+  const sectionRef = useRef<HTMLElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const timelineRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const ctx = gsap.context(() => {
+      // Header animation
+      if (headerRef.current) {
+        gsap.from(headerRef.current, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      }
+
+      // Tabs animation
+      if (tabsRef.current) {
+        gsap.from(tabsRef.current, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: tabsRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  // Animate timeline items when day changes
+  useEffect(() => {
+    if (typeof window === "undefined" || !timelineRef.current) return
+
+    const items = timelineRef.current.querySelectorAll(".timeline-item")
+    gsap.fromTo(
+      items,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "power2.out",
+      }
+    )
+  }, [selectedDay])
+
+  const currentProgramme = programmeData[selectedDay as keyof typeof programmeData]
 
   return (
-    <section id="programme" className="py-20 bg-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
+    <section ref={sectionRef} id="programme" className="py-20 bg-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute left-0 top-1/3 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div ref={headerRef} className="text-center mb-12">
           <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-            Programme
+            Event Schedule
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Three Days of <span className="text-primary">Transformation</span>
+            Forum <span className="text-primary">Programme</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A carefully curated programme featuring keynotes, panels, workshops, and networking opportunities.
+            Three days of inspiration, learning, networking, and celebration.
           </p>
         </div>
 
         {/* Day Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div ref={tabsRef} className="flex justify-center gap-2 mb-10">
           {days.map((day) => (
             <button
               key={day.id}
-              onClick={() => setActiveDay(day.id)}
+              onClick={() => setSelectedDay(day.id)}
               className={cn(
-                "px-6 py-3 rounded-full font-medium transition-all",
-                activeDay === day.id
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "bg-background text-muted-foreground hover:bg-primary/10 border border-border",
+                "px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                selectedDay === day.id
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                  : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border"
               )}
             >
               {day.label}
@@ -262,30 +326,53 @@ export default function ProgrammeSection() {
           ))}
         </div>
 
-        {/* Programme Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {programmeData[activeDay as keyof typeof programmeData].map((item, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "flex flex-col sm:flex-row gap-4 p-6 rounded-2xl border-l-4 transition-all duration-300 hover:shadow-lg hover:scale-[1.01]",
-                  getTypeStyles(item.type),
-                )}
-              >
-                <div className="flex items-center gap-3 sm:w-40 shrink-0">
-                  <Clock className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm font-medium text-foreground">{item.time}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <item.icon className="w-5 h-5 text-primary" />
-                    <h4 className="font-semibold text-foreground">{item.title}</h4>
+        {/* Timeline */}
+        <div ref={timelineRef} className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-1/2" />
+
+          <div className="space-y-6">
+            {currentProgramme.map((item, index) => {
+              const IconComponent = item.icon
+              const isEven = index % 2 === 0
+
+              return (
+                <div
+                  key={index}
+                  className={cn(
+                    "timeline-item relative flex items-start gap-4 md:gap-8",
+                    "md:even:flex-row-reverse"
+                  )}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full md:-translate-x-1/2 z-10 ring-4 ring-background" />
+
+                  {/* Content Card */}
+                  <div
+                    className={cn(
+                      "ml-10 md:ml-0 md:w-[calc(50%-2rem)] bg-card rounded-xl p-4 border border-border shadow-sm hover:shadow-md transition-shadow",
+                      isEven ? "md:mr-auto" : "md:ml-auto"
+                    )}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className={cn("p-2 rounded-lg shrink-0", typeColors[item.type])}>
+                        <IconComponent className="w-4 h-4" weight="fill" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Clock className="w-3.5 h-3.5 text-muted-foreground" />
+                          <span className="text-xs font-medium text-muted-foreground">{item.time}</span>
+                        </div>
+                        <h4 className="font-semibold text-foreground text-sm leading-tight">{item.title}</h4>
+                        {item.description && (
+                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{item.description}</p>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

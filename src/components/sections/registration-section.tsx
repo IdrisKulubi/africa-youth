@@ -1,12 +1,19 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { CheckCircle, Calendar, MapPin, Users, Ticket, Wallet } from "@phosphor-icons/react"
+
+// Register ScrollTrigger
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const eventBenefits = [
   "3-day full access to all sessions",
@@ -30,6 +37,65 @@ export default function RegistrationSection() {
     category: "",
   })
 
+  const sectionRef = useRef<HTMLElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const ticketsRef = useRef<HTMLDivElement>(null)
+  const formRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const ctx = gsap.context(() => {
+      // Header animation
+      if (headerRef.current) {
+        gsap.from(headerRef.current, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      }
+
+      // Tickets panel animation
+      if (ticketsRef.current) {
+        gsap.from(ticketsRef.current, {
+          opacity: 0,
+          x: -60,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ticketsRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      }
+
+      // Form animation
+      if (formRef.current) {
+        gsap.from(formRef.current, {
+          opacity: 0,
+          x: 60,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Registration submitted:", { ...formData, ticketType })
@@ -37,14 +103,14 @@ export default function RegistrationSection() {
   }
 
   return (
-    <section id="registration" className="py-20 bg-background relative overflow-hidden">
+    <section ref={sectionRef} id="registration" className="py-20 bg-background relative overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12">
           <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
             Registration Open
           </span>
@@ -59,7 +125,7 @@ export default function RegistrationSection() {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 space-y-6">
+          <div ref={ticketsRef} className="lg:col-span-2 space-y-6">
             {/* Ticket Options */}
             <div className="space-y-4">
               <div
@@ -82,7 +148,7 @@ export default function RegistrationSection() {
                   <span className="font-bold text-lg">General Delegate</span>
                   <span className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full">200 Slots</span>
                 </div>
-                <div className="text-2xl font-bold text-accent mb-1">Ksh 1,500 <span className="text-sm text-muted-foreground font-normal">/ day</span></div>
+                <div className="text-2xl font-bold text-primary mb-1">Ksh 1,500 <span className="text-sm text-muted-foreground font-normal">/ day</span></div>
                 <p className="text-sm text-muted-foreground">Full access for professionals and general attendees.</p>
               </div>
             </div>
@@ -117,7 +183,7 @@ export default function RegistrationSection() {
           </div>
 
           {/* Registration Form */}
-          <div className="lg:col-span-3 bg-card rounded-2xl p-6 md:p-8 border border-border shadow-xl">
+          <div ref={formRef} className="lg:col-span-3 bg-card rounded-2xl p-6 md:p-8 border border-border shadow-xl">
             <div className="mb-6 pb-6 border-b border-border">
               <h3 className="font-semibold text-foreground text-xl">Participant Details</h3>
               <p className="text-sm text-muted-foreground mt-1">

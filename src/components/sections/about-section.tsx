@@ -1,6 +1,14 @@
 "use client"
 
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Target, CheckCircle, Medal, Users, Lightbulb, Eye, Handshake } from "@phosphor-icons/react"
+
+// Register ScrollTrigger
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const objectives = [
   "To inspire and equip youth with knowledge on entrepreneurship, innovation and climate action.",
@@ -25,14 +33,206 @@ const outcomes = [
 ]
 
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null)
+  const zenRef = useRef<HTMLDivElement>(null)
+  const visionRef = useRef<HTMLDivElement>(null)
+  const missionRef = useRef<HTMLDivElement>(null)
+  const backgroundRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+  const objectivesRef = useRef<HTMLDivElement>(null)
+  const outcomesRef = useRef<HTMLDivElement>(null)
+  const audienceRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const ctx = gsap.context(() => {
+      // Header animation - elegant fade up
+      if (headerRef.current) {
+        gsap.fromTo(headerRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 90%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Zen Forward section - scale and fade
+      if (zenRef.current) {
+        gsap.fromTo(zenRef.current,
+          { opacity: 0, scale: 0.95 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: zenRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Vision card - slide from left with rotation
+      if (visionRef.current) {
+        gsap.fromTo(visionRef.current,
+          { opacity: 0, x: -60, rotation: -2 },
+          {
+            opacity: 1,
+            x: 0,
+            rotation: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: visionRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Mission card - slide from right with rotation
+      if (missionRef.current) {
+        gsap.fromTo(missionRef.current,
+          { opacity: 0, x: 60, rotation: 2 },
+          {
+            opacity: 1,
+            x: 0,
+            rotation: 0,
+            duration: 1,
+            delay: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: missionRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Background section - fade up
+      if (backgroundRef.current) {
+        gsap.fromTo(backgroundRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: backgroundRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Image with scale reveal
+      if (imageRef.current) {
+        gsap.fromTo(imageRef.current,
+          { opacity: 0, scale: 0.9, y: 30 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: imageRef.current,
+              start: "top 90%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Objectives - stagger children
+      if (objectivesRef.current) {
+        const items = objectivesRef.current.querySelectorAll("li")
+        gsap.fromTo(items,
+          { opacity: 0, x: -20 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: objectivesRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Outcomes - stagger children
+      if (outcomesRef.current) {
+        const items = outcomesRef.current.querySelectorAll("li")
+        gsap.fromTo(items,
+          { opacity: 0, x: 20 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: outcomesRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        )
+      }
+
+      // Audience tags - pop in with scale
+      if (audienceRef.current) {
+        const tags = audienceRef.current.querySelectorAll(".audience-tag")
+        gsap.fromTo(tags,
+          { opacity: 0, scale: 0.8 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            stagger: 0.06,
+            ease: "back.out(1.5)",
+            scrollTrigger: {
+              trigger: audienceRef.current,
+              start: "top 90%",
+              once: true,
+            },
+          }
+        )
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section id="about" className="py-20 bg-background relative">
+    <section ref={sectionRef} id="about" className="py-20 bg-background relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute right-0 top-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute left-0 bottom-1/4 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
             About the Forum
           </span>
@@ -45,10 +245,9 @@ export default function AboutSection() {
         </div>
 
         <div className="mb-20">
-          <div className="text-center mb-10">
+          <div ref={zenRef} className="text-center mb-10">
             <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
-              {/* Placeholder for Logo, using Emoji for now if image fails */}
-              {/* <span className="text-2xl">🌍</span> */}
+              <img src="/images/zen-logo.png" alt="Zen Forward Africa" className="w-8 h-8 object-contain" onError={(e) => { e.currentTarget.style.display = 'none' }} />
             </div>
             <h3 className="text-3xl font-bold text-foreground mb-2">Zen Forward Africa</h3>
             <p className="text-muted-foreground text-lg">The driving force behind AYBCIF</p>
@@ -56,7 +255,7 @@ export default function AboutSection() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
+            <div ref={visionRef} className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Eye className="w-6 h-6 text-primary-foreground" weight="fill" />
@@ -70,7 +269,7 @@ export default function AboutSection() {
             </div>
 
             {/* Mission */}
-            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
+            <div ref={missionRef} className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Lightbulb className="w-6 h-6 text-accent-foreground" weight="fill" />
@@ -89,7 +288,7 @@ export default function AboutSection() {
 
         {/* Background & Rationale */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div>
+          <div ref={backgroundRef}>
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
               <div className="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
                 <Target className="w-6 h-6" weight="duotone" />
@@ -122,10 +321,9 @@ export default function AboutSection() {
 
           </div>
 
-          <div className="relative">
+          <div ref={imageRef} className="relative">
             <div className="absolute -top-4 -left-4 w-full h-full bg-primary/10 rounded-2xl" />
             <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent/10 rounded-2xl" />
-            {/* Use a placeholder div instead of image for now if image is missing, or keep image tag but robust */}
             <div className="bg-muted aspect-video rounded-2xl flex items-center justify-center relative z-10 overflow-hidden">
               <img
                 src="/images/youth3.png"
@@ -138,7 +336,7 @@ export default function AboutSection() {
 
         {/* Objectives & Outcomes Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div ref={objectivesRef} className="bg-card rounded-2xl p-8 border border-border shadow-sm">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <CheckCircle className="w-6 h-6 text-secondary" weight="fill" />
               Our Objectives
@@ -155,7 +353,7 @@ export default function AboutSection() {
             </ul>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div ref={outcomesRef} className="bg-card rounded-2xl p-8 border border-border shadow-sm">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Medal className="w-6 h-6 text-primary" weight="duotone" />
               Expected Outcomes
@@ -172,7 +370,7 @@ export default function AboutSection() {
         </div>
 
         {/* Target Audience */}
-        <div className="bg-card rounded-2xl p-8 border border-border">
+        <div ref={audienceRef} className="bg-card rounded-2xl p-8 border border-border">
           <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
             <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
               <Users className="w-5 h-5 text-primary" />
@@ -181,7 +379,7 @@ export default function AboutSection() {
           </h3>
           <div className="flex flex-wrap gap-4">
             {targetAudience.map((audience, i) => (
-              <div key={i} className="flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full">
+              <div key={i} className="audience-tag flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full hover:border-primary/50 transition-colors">
                 <CheckCircle className="w-4 h-4 text-primary" weight="fill" />
                 <span className="text-sm text-foreground">{audience}</span>
               </div>
