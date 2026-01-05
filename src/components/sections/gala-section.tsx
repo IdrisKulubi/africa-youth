@@ -1,5 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, MapPin, Sparkles, Ticket, Users } from "lucide-react"
+import { Calendar, Clock, MapPin, Sparkle, Ticket, Users } from "@phosphor-icons/react"
 import Link from "next/link"
 
 export default function GalaSection() {
@@ -14,7 +16,7 @@ export default function GalaSection() {
           {/* Content */}
           <div>
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4" />
+              <Sparkle className="w-4 h-4" />
               <span className="text-sm font-semibold">Premium Event</span>
             </div>
 
@@ -74,7 +76,7 @@ export default function GalaSection() {
                   "Partner Recognition",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-background/80">
-                    <Sparkles className="w-4 h-4 text-accent" />
+                    <Sparkle className="w-4 h-4 text-accent" />
                     {item}
                   </li>
                 ))}

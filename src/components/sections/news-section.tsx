@@ -1,4 +1,6 @@
-import { Calendar, ArrowRight } from "lucide-react"
+"use client"
+
+import { Calendar, ArrowRight } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 

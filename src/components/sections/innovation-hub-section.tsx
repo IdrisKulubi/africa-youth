@@ -1,6 +1,13 @@
-import { Rocket, CheckCircle2, Trophy, ArrowRight } from "lucide-react"
+"use client"
+
+import { Rocket, CheckCircle, Trophy, ArrowRight } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState } from "react"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 const criteria = [
   "Youth-led startup (founder under 35 years)",
@@ -35,9 +42,27 @@ const successStories = [
 ]
 
 export default function InnovationHubSection() {
+  const [open, setOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    startupName: "",
+    founderName: "",
+    email: "",
+    description: ""
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Startup Application:", formData)
+    alert("Application received! We will review your startup and get back to you.")
+    setOpen(false)
+  }
+
   return (
-    <section id="innovation" className="py-20 bg-muted/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="innovation" className="py-20 bg-muted/50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
@@ -54,97 +79,138 @@ export default function InnovationHubSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Application Criteria */}
-          <div className="bg-card rounded-2xl p-8 border border-border">
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <Rocket className="w-6 h-6 text-primary-foreground" />
+                <Rocket className="w-6 h-6 text-primary-foreground" weight="fill" />
               </div>
               <h3 className="text-xl font-bold text-foreground">Application Criteria</h3>
             </div>
             <ul className="space-y-4 mb-8">
               {criteria.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" weight="fill" />
                   <span className="text-muted-foreground">{item}</span>
                 </li>
               ))}
             </ul>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-              <Link href="#registration">
-                Apply Now <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
+
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20">
+                  Apply Now <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Apply for Startup Showcase</DialogTitle>
+                  <DialogDescription>
+                    Tell us a bit about your innovation. We'll contact you for the full pitch deck.
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="startupName">Startup Name</Label>
+                    <Input
+                      id="startupName"
+                      value={formData.startupName}
+                      onChange={(e) => setFormData({ ...formData, startupName: e.target.value })}
+                      placeholder="Your Venture Name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="founderName">Founder Name</Label>
+                    <Input
+                      id="founderName"
+                      value={formData.founderName}
+                      onChange={(e) => setFormData({ ...formData, founderName: e.target.value })}
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="founder@startup.com"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="desc">Short Description</Label>
+                    <Textarea
+                      id="desc"
+                      value={formData.description}
+                      onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                      placeholder="What problem are you solving?"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">Submit Application</Button>
+                </form>
+              </DialogContent>
+            </Dialog>
+
           </div>
 
           {/* What You Get */}
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
+          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-accent-foreground" />
+                <Trophy className="w-6 h-6 text-accent-foreground" weight="fill" />
               </div>
               <h3 className="text-xl font-bold text-foreground">What Selected Startups Get</h3>
             </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-bold shrink-0">
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-background shadow-sm rounded-full flex items-center justify-center text-lg font-bold shrink-0 text-primary">
                   1
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Pitch to Investors</p>
-                  <p className="text-sm text-muted-foreground">5-minute pitch to a panel of investors and VCs</p>
+                  <p className="font-semibold text-foreground text-lg mb-1">Pitch to Investors</p>
+                  <p className="text-sm text-muted-foreground">5-minute pitch opportunity to a panel of top African investors and VCs.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-bold shrink-0">
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-background shadow-sm rounded-full flex items-center justify-center text-lg font-bold shrink-0 text-primary">
                   2
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Mentorship Access</p>
-                  <p className="text-sm text-muted-foreground">1-on-1 sessions with industry experts</p>
+                  <p className="font-semibold text-foreground text-lg mb-1">Exhibition Space</p>
+                  <p className="text-sm text-muted-foreground">Free booth to showcase your product to over 2000 attendees.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-bold shrink-0">
+              <li className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-background shadow-sm rounded-full flex items-center justify-center text-lg font-bold shrink-0 text-primary">
                   3
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Exhibition Booth</p>
-                  <p className="text-sm text-muted-foreground">Showcase your product/service to 500+ attendees</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-bold shrink-0">
-                  4
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Cash Prizes</p>
-                  <p className="text-sm text-muted-foreground">Top 3 startups win seed funding grants</p>
+                  <p className="font-semibold text-foreground text-lg mb-1">Mentorship</p>
+                  <p className="text-sm text-muted-foreground">One-on-one sessions with industry leaders and business coaches.</p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Past Success Stories */}
-        <div>
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">Past Success Stories</h3>
+        {/* Success Stories */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-center mb-10">Past Success Stories</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {successStories.map((story, i) => (
-              <div
-                key={i}
-                className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-colors"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold bg-primary/10 text-primary px-2 py-1 rounded-full">
-                    {story.country}
-                  </span>
-                  <span className="text-xs font-semibold bg-accent/10 text-accent px-2 py-1 rounded-full">
-                    Raised {story.funding}
-                  </span>
+              <div key={i} className="bg-card p-6 rounded-2xl border border-border border-l-4 border-l-primary/50 hover:shadow-lg transition-all">
+                <div className="mb-4">
+                  <h4 className="font-bold text-lg">{story.name}</h4>
+                  <p className="text-sm text-muted-foreground">
+                    {story.founder}, {story.country}
+                  </p>
                 </div>
-                <h4 className="font-bold text-foreground mb-1">{story.name}</h4>
-                <p className="text-sm text-muted-foreground mb-2">Founded by {story.founder}</p>
-                <p className="text-sm text-muted-foreground">{story.description}</p>
+                <p className="text-sm mb-4 italic">"{story.description}"</p>
+                <div className="text-accent font-semibold text-sm">Raised {story.funding}</div>
               </div>
             ))}
           </div>

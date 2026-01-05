@@ -1,10 +1,13 @@
-import { Check, Star, Award, Zap, Building } from "lucide-react"
+"use client"
+
+import { Check, Star, Medal, Lightning, Buildings, ArrowRight } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const sponsorPackages = [
   {
     name: "Gold Sponsor",
+    price: "Ksh 1,000,000",
     icon: Star,
     color: "accent",
     benefits: [
@@ -21,7 +24,8 @@ const sponsorPackages = [
   },
   {
     name: "Silver Sponsor",
-    icon: Award,
+    price: "Ksh 500,000",
+    icon: Medal,
     color: "secondary",
     benefits: [
       "Logo on event materials & banners",
@@ -36,7 +40,8 @@ const sponsorPackages = [
   },
   {
     name: "Bronze Sponsor",
-    icon: Zap,
+    price: "Ksh 250,000",
+    icon: Lightning,
     color: "primary",
     benefits: [
       "Logo on event website & program",
@@ -50,7 +55,8 @@ const sponsorPackages = [
   },
   {
     name: "Exhibitor Booth",
-    icon: Building,
+    price: "Ksh 100,000",
+    icon: Buildings,
     color: "muted",
     benefits: [
       "Exhibition space for 3 days",
@@ -102,22 +108,22 @@ export default function SponsorshipSection() {
               )}
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${pkg.color === "accent"
-                    ? "bg-accent/20"
-                    : pkg.color === "secondary"
-                      ? "bg-secondary/20"
-                      : pkg.color === "primary"
-                        ? "bg-primary/20"
-                        : "bg-muted"
+                  ? "bg-accent/20"
+                  : pkg.color === "secondary"
+                    ? "bg-secondary/20"
+                    : pkg.color === "primary"
+                      ? "bg-primary/20"
+                      : "bg-muted"
                   }`}
               >
                 <pkg.icon
                   className={`w-6 h-6 ${pkg.color === "accent"
-                      ? "text-accent"
-                      : pkg.color === "secondary"
-                        ? "text-secondary"
-                        : pkg.color === "primary"
-                          ? "text-primary"
-                          : "text-muted-foreground"
+                    ? "text-accent"
+                    : pkg.color === "secondary"
+                      ? "text-secondary"
+                      : pkg.color === "primary"
+                        ? "text-primary"
+                        : "text-muted-foreground"
                     }`}
                 />
               </div>

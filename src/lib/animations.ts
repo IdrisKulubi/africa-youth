@@ -1,4 +1,9 @@
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger)
+}
 
 /**
  * Fade in with upward motion animation
@@ -10,6 +15,11 @@ export const fadeInUp = (element: gsap.TweenTarget, delay = 0) => {
         duration: 1,
         delay,
         ease: "power3.out",
+        scrollTrigger: {
+            trigger: element instanceof Element ? element : null,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+        },
     })
 }
 
@@ -23,6 +33,11 @@ export const staggerFadeIn = (elements: gsap.TweenTarget, staggerDelay = 0.15) =
         duration: 0.8,
         stagger: staggerDelay,
         ease: "power2.out",
+        scrollTrigger: {
+            trigger: elements instanceof Element ? elements : (elements as Element[])[0], // Trigger on first element or container
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+        },
     })
 }
 

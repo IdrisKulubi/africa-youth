@@ -1,27 +1,25 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle2, Calendar, MapPin, Users } from "lucide-react"
+import { CheckCircle, Calendar, MapPin, Users, Ticket, Wallet } from "@phosphor-icons/react"
 
 const eventBenefits = [
   "3-day full access to all sessions",
   "Workshop participation",
   "Networking sessions with industry leaders",
   "Certificate of participation",
-  "Lunch and refreshments",
   "Access to Gala Night",
   "Innovation Hub showcase access",
   "Exclusive event materials",
 ]
 
 export default function RegistrationSection() {
+  const [ticketType, setTicketType] = useState<"free" | "paid">("free")
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -30,72 +28,103 @@ export default function RegistrationSection() {
     organization: "",
     role: "",
     category: "",
-    dietaryRequirements: "",
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Registration submitted:", formData)
+    console.log("Registration submitted:", { ...formData, ticketType })
     alert("Thank you for your registration! We will send you a confirmation email shortly.")
   }
 
   return (
-    <section id="registration" className="py-20 bg-background">
+    <section id="registration" className="py-20 bg-background relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-            Free Registration
+            Registration Open
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Register for <span className="text-primary">AYBCIF 2026</span>
+            Secure Your <span className="text-primary">Spot</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join 150+ participants from across Africa at this transformative event. Registration is completely free!
+            Join 150+ participants at this transformative event.
+            <br />
+            <span className="font-medium text-foreground">Limited to 300 slots only.</span>
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-6">
-            {/* Free Entry Banner */}
-            <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-6 text-primary-foreground">
-              <div className="text-center mb-4">
-                <span className="text-4xl font-bold">FREE</span>
-                <p className="text-primary-foreground/80 mt-1">Entry for all participants</p>
+            {/* Ticket Options */}
+            <div className="space-y-4">
+              <div
+                className={`cursor-pointer rounded-2xl p-5 border-2 transition-all ${ticketType === 'free' ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`}
+                onClick={() => setTicketType('free')}
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <span className="font-bold text-lg">Invited & Students</span>
+                  <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full">100 Slots</span>
+                </div>
+                <div className="text-2xl font-bold text-primary mb-1">Free</div>
+                <p className="text-sm text-muted-foreground">For speakers, partners, and selected students.</p>
               </div>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5" />
-                  <span>May 28-29, 2026</span>
+
+              <div
+                className={`cursor-pointer rounded-2xl p-5 border-2 transition-all ${ticketType === 'paid' ? 'border-accent bg-accent/5' : 'border-border hover:border-accent/50'}`}
+                onClick={() => setTicketType('paid')}
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <span className="font-bold text-lg">General Delegate</span>
+                  <span className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full">200 Slots</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5" />
-                  <span>Nairobi, Kenya</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Users className="w-5 h-5" />
-                  <span>Limited to 2000 participants</span>
-                </div>
+                <div className="text-2xl font-bold text-accent mb-1">Ksh 1,500 <span className="text-sm text-muted-foreground font-normal">/ day</span></div>
+                <p className="text-sm text-muted-foreground">Full access for professionals and general attendees.</p>
               </div>
             </div>
 
             {/* What You Get */}
-            <div className="bg-card rounded-2xl p-6 border border-border">
-              <h3 className="font-semibold text-foreground mb-4">What You Get</h3>
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border">
+              <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Ticket className="w-5 h-5 text-primary" />
+                What You Get
+              </h3>
               <ul className="space-y-3">
                 {eventBenefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" weight="fill" />
                     {benefit}
                   </li>
                 ))}
               </ul>
             </div>
+
+            <div className="flex items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                <span>May 28-29, 2026</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>Nairobi, Kenya</span>
+              </div>
+            </div>
+
           </div>
 
           {/* Registration Form */}
-          <div className="lg:col-span-3 bg-card rounded-2xl p-6 md:p-8 border border-border">
-            <h3 className="font-semibold text-foreground mb-6">Participant Information</h3>
+          <div className="lg:col-span-3 bg-card rounded-2xl p-6 md:p-8 border border-border shadow-xl">
+            <div className="mb-6 pb-6 border-b border-border">
+              <h3 className="font-semibold text-foreground text-xl">Participant Details</h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                Registering as: <span className="font-bold text-primary capitalize">{ticketType === 'free' ? 'Invited / Student (Free)' : 'General Delegate (Paid)'}</span>
+              </p>
+            </div>
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -106,6 +135,7 @@ export default function RegistrationSection() {
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     required
+                    className="rounded-xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -116,6 +146,7 @@ export default function RegistrationSection() {
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     required
+                    className="rounded-xl"
                   />
                 </div>
               </div>
@@ -129,6 +160,7 @@ export default function RegistrationSection() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
+                  className="rounded-xl"
                 />
               </div>
 
@@ -142,6 +174,7 @@ export default function RegistrationSection() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
+                    className="rounded-xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -151,6 +184,7 @@ export default function RegistrationSection() {
                     placeholder="Company / University / NGO"
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                    className="rounded-xl"
                   />
                 </div>
               </div>
@@ -162,7 +196,7 @@ export default function RegistrationSection() {
                     value={formData.category}
                     onValueChange={(value) => setFormData({ ...formData, category: value })}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="rounded-xl">
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -178,7 +212,7 @@ export default function RegistrationSection() {
                 <div className="space-y-2">
                   <Label htmlFor="role">Your Role</Label>
                   <Select value={formData.role} onValueChange={(value) => setFormData({ ...formData, role: value })}>
-                    <SelectTrigger>
+                    <SelectTrigger className="rounded-xl">
                       <SelectValue placeholder="Select your role" />
                     </SelectTrigger>
                     <SelectContent>
@@ -192,23 +226,12 @@ export default function RegistrationSection() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="dietary">Dietary Requirements (Optional)</Label>
-                <Textarea
-                  id="dietary"
-                  placeholder="Any allergies or dietary preferences..."
-                  value={formData.dietaryRequirements}
-                  onChange={(e) => setFormData({ ...formData, dietaryRequirements: e.target.value })}
-                  rows={2}
-                />
-              </div>
-
               <div className="pt-4 border-t border-border">
-                <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  Register Now - It's Free!
+                <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20">
+                  {ticketType === 'free' ? 'Confirm Free Registration' : 'Proceed to Payment'}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center mt-3">
-                  By registering, you agree to our Terms of Service and Privacy Policy. Limited spots available.
+                  By registering, you agree to our Terms of Service and Privacy Policy.
                 </p>
               </div>
             </form>

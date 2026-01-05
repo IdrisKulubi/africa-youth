@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, ArrowRight } from "@phosphor-icons/react"
 import Link from "next/link"
 
 export default function HeroSection() {
@@ -50,39 +50,39 @@ export default function HeroSection() {
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8">
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
                     <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                     <span className="text-white/90 text-sm font-medium">Registration Now Open</span>
                 </div>
 
                 {/* Title */}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance leading-tight animate-fade-in-up">
                     Africa Youth, Business &<br />
                     <span className="text-accent">Climate Innovation</span> Forum
                 </h1>
 
                 {/* Theme */}
-                <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8 text-pretty">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8 text-pretty animate-fade-in-up animation-delay-200">
                     {'"Sustainable Futures: How Young People Can Drive Business Growth, Innovation, and Climate Action."'}
                 </p>
 
                 {/* Date & Location */}
-                <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5">
+                <div className="flex flex-wrap items-center justify-center gap-6 mb-10 animate-fade-in-up animation-delay-300">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
                         <Calendar className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">28th - 29th May 2026</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
                         <MapPin className="w-5 h-5 text-accent" />
                         <span className="text-white font-medium">Nairobi, Kenya</span>
                     </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+                <div className="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fade-in-up animation-delay-400">
                     <Button
                         size="lg"
-                        className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full"
+                        className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                         asChild
                     >
                         <Link href="#registration">
@@ -92,7 +92,7 @@ export default function HeroSection() {
                     <Button
                         size="lg"
                         variant="outline"
-                        className="border-2 border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-6 rounded-full bg-transparent"
+                        className="border-2 border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-6 rounded-full bg-transparent hover:scale-105 transition-transform duration-300"
                         asChild
                     >
                         <Link href="#sponsors">Become a Partner</Link>
@@ -102,7 +102,7 @@ export default function HeroSection() {
                 {/* Countdown Timer */}
                 <div className="mb-8">
                     <p className="text-white/60 text-sm uppercase tracking-wider mb-4">Countdown to AYBCIF 2026</p>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex items-center justify-center gap-4">
                         {[
                             { value: timeLeft.days, label: "Days" },
                             { value: timeLeft.hours, label: "Hours" },
@@ -111,22 +111,15 @@ export default function HeroSection() {
                         ].map((item) => (
                             <div
                                 key={item.label}
-                                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-4 min-w-[90px]"
+                                className="bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 min-w-[80px]"
                             >
-                                <span className="block text-3xl sm:text-4xl font-bold text-white">
-                                    {item.value.toString().padStart(2, "0")}
+                                <span className="text-3xl md:text-4xl font-bold text-white block">
+                                    {String(item.value).padStart(2, "0")}
                                 </span>
                                 <span className="text-white/60 text-xs uppercase tracking-wider">{item.label}</span>
                             </div>
                         ))}
                     </div>
-                </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-                <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
-                    <div className="w-1.5 h-3 bg-white/60 rounded-full mt-2 animate-bounce" />
                 </div>
             </div>
         </section>

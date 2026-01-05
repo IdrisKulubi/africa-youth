@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Clock, Coffee, Users, Mic2, Award, PartyPopper } from "lucide-react"
+import { Clock, Coffee, Users, Microphone, Medal, Confetti } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 const days = [
@@ -23,14 +23,14 @@ const programmeData = {
       time: "09:00 - 09:20",
       title: "Opening Ceremony",
       description: "Welcome remarks by Chair AYBCIF. Overview of Zen Forward Africa and AYBCIF Vision.",
-      icon: Mic2,
+      icon: Microphone,
       type: "session",
     },
     {
       time: "09:20 - 09:40",
       title: "Keynote Address",
       description: "Positioning Youth at the Centre of Africa’s Sustainable Economic Transition. (Govt Rep & UN Partner)",
-      icon: Mic2,
+      icon: Microphone,
       type: "session",
     },
     {
@@ -95,7 +95,7 @@ const programmeData = {
       time: "08:45 - 09:15",
       title: "Keynote Address II",
       description: "Scaling Youth-Led Climate Solutions Across Africa",
-      icon: Mic2,
+      icon: Microphone,
       type: "session",
     },
     {
@@ -116,7 +116,7 @@ const programmeData = {
       time: "11:00 - 12:30",
       title: "Startup Pitch Arena – Round One",
       description: "Young innovators present solutions to an expert judging panel",
-      icon: Award,
+      icon: Medal,
       type: "showcase",
     },
     {
@@ -137,7 +137,7 @@ const programmeData = {
       time: "15:00 - 16:00",
       title: "Startup Pitch Arena – Final Round",
       description: "",
-      icon: Award,
+      icon: Medal,
       type: "showcase",
     },
     {
@@ -153,21 +153,21 @@ const programmeData = {
       time: "18:00 - 18:45",
       title: "Red Carpet & Photography",
       description: "Guest arrivals, interviews and networking",
-      icon: PartyPopper,
+      icon: Confetti,
       type: "gala",
     },
     {
       time: "18:45 - 19:00",
       title: "Opening Remarks",
       description: "",
-      icon: Mic2,
+      icon: Microphone,
       type: "gala",
     },
     {
       time: "19:00 - 19:40",
       title: "Youth Talent & Innovation Performances",
       description: "Spoken word, music and creative showcases",
-      icon: PartyPopper,
+      icon: Confetti,
       type: "gala",
     },
     {
@@ -181,28 +181,28 @@ const programmeData = {
       time: "20:20 - 21:00",
       title: "Awards Ceremony",
       description: "Young Innovator, Climate Business Trailblazer, Sustainability Leadership, Social Impact Enterprise Awards",
-      icon: Award,
+      icon: Medal,
       type: "gala",
     },
     {
       time: "21:00 - 21:30",
       title: "Guest of Honour Address",
       description: "",
-      icon: Mic2,
+      icon: Microphone,
       type: "gala",
     },
     {
       time: "21:30 - 22:30",
       title: "Live Band & Networking",
       description: "",
-      icon: PartyPopper,
+      icon: Confetti,
       type: "gala",
     },
     {
       time: "22:30 - 00:00",
       title: "Afterparty",
       description: "DJ Segment & Closing",
-      icon: PartyPopper,
+      icon: Confetti,
       type: "gala",
     },
   ],

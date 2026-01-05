@@ -1,5 +1,7 @@
+"use client"
+
 import Link from "next/link"
-import { Leaf, Instagram, Linkedin, Twitter, Facebook, Youtube, ArrowUp } from "lucide-react"
+import { Plant, InstagramLogo, LinkedinLogo, TwitterLogo, FacebookLogo, YoutubeLogo, ArrowUp } from "@phosphor-icons/react"
 
 const footerLinks = {
     quickLinks: [
@@ -20,8 +22,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
-    { icon: Twitter, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
+    { icon: InstagramLogo, label: "Instagram", href: "https://www.instagram.com/zen_forward_africa25" },
+    { icon: TwitterLogo, label: "X (Twitter)", href: "https://x.com/FowardZen78940" },
 ]
 
 export default function Footer() {
@@ -34,7 +36,7 @@ export default function Footer() {
                     <div className="col-span-2 md:col-span-1">
                         <Link href="#" className="flex items-center gap-2 mb-4">
                             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                                <Leaf className="w-5 h-5 text-primary-foreground" />
+                                <Plant className="w-5 h-5 text-primary-foreground" weight="fill" />
                             </div>
                             <span className="font-bold text-lg text-background">
                                 AYBCIF <span className="text-accent">2026</span>

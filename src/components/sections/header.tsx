@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { List, X } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/theme/mode-toggle"
@@ -36,7 +36,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo - Top Left */}
                     <Link href="/" className="flex items-center gap-2">
-                        
+
                         <div className="flex flex-col">
                             <span
                                 className={cn(
@@ -79,7 +79,7 @@ export default function Header() {
                     {/* CTA Buttons - Center Right */}
                     <div className="hidden md:flex items-center gap-3 mr-4">
                         <ModeToggle />
-                       
+
                         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
                             <Link href="/event#registration">Register Now</Link>
                         </Button>
@@ -94,7 +94,7 @@ export default function Header() {
                         {isMobileMenuOpen ? (
                             <X className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
                         ) : (
-                            <Menu className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
+                            <List className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
                         )}
                     </button>
                 </div>

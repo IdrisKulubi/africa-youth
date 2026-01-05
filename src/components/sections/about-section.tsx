@@ -1,4 +1,6 @@
-import { Target, CheckCircle2, Award, Users, Lightbulb, Eye } from "lucide-react"
+"use client"
+
+import { Target, CheckCircle, Medal, Users, Lightbulb, Eye, Handshake } from "@phosphor-icons/react"
 
 const objectives = [
   "To inspire and equip youth with knowledge on entrepreneurship, innovation and climate action.",
@@ -24,7 +26,10 @@ const outcomes = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background relative">
+      {/* Background accent */}
+      <div className="absolute right-0 top-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -41,16 +46,20 @@ export default function AboutSection() {
 
         <div className="mb-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-foreground mb-2">Zen Forward Africa</h3>
-            <p className="text-muted-foreground">The driving force behind AYBCIF</p>
+            <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
+              {/* Placeholder for Logo, using Emoji for now if image fails */}
+              {/* <span className="text-2xl">🌍</span> */}
+            </div>
+            <h3 className="text-3xl font-bold text-foreground mb-2">Zen Forward Africa</h3>
+            <p className="text-muted-foreground text-lg">The driving force behind AYBCIF</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
-                  <Eye className="w-6 h-6 text-primary-foreground" />
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Eye className="w-6 h-6 text-primary-foreground" weight="fill" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Vision</h4>
               </div>
@@ -61,10 +70,10 @@ export default function AboutSection() {
             </div>
 
             {/* Mission */}
-            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 border border-accent/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center">
-                  <Lightbulb className="w-6 h-6 text-accent-foreground" />
+                <div className="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Lightbulb className="w-6 h-6 text-accent-foreground" weight="fill" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground">Our Mission</h4>
               </div>
@@ -82,8 +91,8 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <Target className="w-5 h-5 text-primary-foreground" />
+              <div className="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                <Target className="w-6 h-6" weight="duotone" />
               </div>
               Background & Rationale
             </h3>
@@ -98,36 +107,40 @@ export default function AboutSection() {
               how youth can be empowered to build businesses, drive green innovation and actively participate in climate
               solutions.
             </p>
+
+            <div className="mt-8 bg-card rounded-xl p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Handshake className="w-5 h-5 text-accent" weight="fill" />
+                Organized In Partnership With
+              </h4>
+              <div className="flex flex-wrap gap-4 items-center">
+                <span className="bg-muted px-4 py-2 rounded-lg font-medium text-sm">Nation Media Group</span>
+                <span className="bg-muted px-4 py-2 rounded-lg font-medium text-sm">Zen Forward Africa</span>
+                <span className="text-muted-foreground text-sm italic">+ Other Strategic Partners</span>
+              </div>
+            </div>
+
           </div>
+
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-full h-full bg-primary/10 rounded-2xl" />
-            <img
-              src="/images/youth3.png"
-              alt="Youth Innovation Workshop"
-              className="relative rounded-2xl w-full object-cover shadow-lg"
-            />
-          </div>
-        </div>
-
-        <div className="mb-20 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-primary-foreground">
-          <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">The Missing Link: Youth x Business x Climate</h3>
-            <p className="text-primary-foreground/90 leading-relaxed text-lg">
-              AYBCIF bridges the critical gap between Africa{"'"}s vibrant youth population, the business community, and
-              climate action. We create meaningful connections that transform innovative ideas into sustainable
-              solutions, ensuring young voices are heard in boardrooms and policy discussions alike.
-            </p>
+            <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent/10 rounded-2xl" />
+            {/* Use a placeholder div instead of image for now if image is missing, or keep image tag but robust */}
+            <div className="bg-muted aspect-video rounded-2xl flex items-center justify-center relative z-10 overflow-hidden">
+              <img
+                src="/images/youth3.png"
+                alt="Youth Innovation Workshop"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
 
         {/* Objectives & Outcomes Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Objectives */}
-          <div className="bg-card rounded-2xl p-8 border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
-              <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                <CheckCircle2 className="w-5 h-5 text-secondary-foreground" />
-              </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <CheckCircle className="w-6 h-6 text-secondary" weight="fill" />
               Our Objectives
             </h3>
             <ul className="space-y-4">
@@ -136,25 +149,22 @@ export default function AboutSection() {
                   <span className="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-semibold shrink-0 mt-0.5">
                     {i + 1}
                   </span>
-                  <span className="text-muted-foreground">{obj}</span>
+                  <span className="text-muted-foreground text-sm">{obj}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Expected Outcomes */}
-          <div className="bg-card rounded-2xl p-8 border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <Award className="w-5 h-5 text-accent-foreground" />
-              </div>
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <Medal className="w-6 h-6 text-primary" weight="duotone" />
               Expected Outcomes
             </h3>
-            <ul className="space-y-4">
-              {outcomes.map((outcome, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{outcome}</span>
+            <ul className="space-y-3">
+              {outcomes.map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <CheckCircle className="w-5 h-5 text-primary shrink-0" weight="fill" />
+                  {item}
                 </li>
               ))}
             </ul>
@@ -162,7 +172,7 @@ export default function AboutSection() {
         </div>
 
         {/* Target Audience */}
-        <div className="mt-8 bg-card rounded-2xl p-8 border border-border">
+        <div className="bg-card rounded-2xl p-8 border border-border">
           <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
             <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
               <Users className="w-5 h-5 text-primary" />
@@ -172,31 +182,13 @@ export default function AboutSection() {
           <div className="flex flex-wrap gap-4">
             {targetAudience.map((audience, i) => (
               <div key={i} className="flex items-center gap-2 bg-background border border-border px-4 py-2 rounded-full">
-                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <CheckCircle className="w-4 h-4 text-primary" weight="fill" />
                 <span className="text-sm text-foreground">{audience}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Event Host */}
-        <div className="mt-16 bg-primary/5 rounded-2xl p-8 border border-primary/20">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shrink-0">
-              <Users className="w-10 h-10 text-primary-foreground" />
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-foreground mb-2">Event Host & Organizer</h3>
-              <p className="text-muted-foreground mb-2">
-                Organized by <span className="text-foreground font-semibold">Azenath Cherono Bor</span>, aspiring
-                Lawyer, Youth Empowerment Advocate, Climate Change Advocate, and Humanitarian.
-              </p>
-              <p className="text-muted-foreground">
-                In collaboration with partners including UNEP, UNDP, and leading universities.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
