@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 const sponsorPackages = [
   {
     name: "Gold Sponsor",
-    price: "Ksh 1,000,000",
+    price: "Ksh 3,000,000",
     icon: Star,
     color: "accent",
     benefits: [
@@ -32,7 +32,7 @@ const sponsorPackages = [
   },
   {
     name: "Silver Sponsor",
-    price: "Ksh 500,000",
+    price: "Ksh 1,500,000",
     icon: Medal,
     color: "secondary",
     benefits: [
@@ -48,7 +48,7 @@ const sponsorPackages = [
   },
   {
     name: "Bronze Sponsor",
-    price: "Ksh 250,000",
+    price: "Ksh 500,000",
     icon: Lightning,
     color: "primary",
     benefits: [
