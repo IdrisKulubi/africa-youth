@@ -56,7 +56,7 @@ export default function EventPage() {
                         How Young People Can Drive Business Growth, Innovation, and Climate Action
                     </p>
                     <p className="text-lg sm:text-xl text-white/80 max-w-4xl mx-auto mb-12">
-                        Organized by Azenath Cherono Bor, in collaboration with Partners
+                        Organized by Zenforward Africa , in collaboration with Partners
                     </p>
 
                     {/* Event Details Cards */}

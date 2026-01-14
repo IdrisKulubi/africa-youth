@@ -110,7 +110,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         <p className="text-background/60 text-sm text-center sm:text-left">
-                            © 2026 AYBCIF. All rights reserved. Organized by Azenath Cherono Bor.
+                            © 2026 AYBCIF. All rights reserved. Organized by Zenforward Africa.
                         </p>
                         <div className="flex items-center gap-6 text-sm">
                             <Link href="#" className="text-background/60 hover:text-accent transition-colors">
