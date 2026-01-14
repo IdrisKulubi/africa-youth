@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 const sponsorPackages = [
   {
     name: "Gold Sponsor",
-    price: "Ksh 3,000,000",
+    price: "Ksh 5,000,000",
     icon: StarIcon,
     color: "accent",
     benefits: [
@@ -25,14 +25,13 @@ const sponsorPackages = [
       "Exhibition booth (premium location)",
       "Social media feature posts (5x)",
       "Full-page ad in event program",
-      "Priority access to participant database",
       "Media mentions in press releases",
     ],
     featured: true,
   },
   {
     name: "Silver Sponsor",
-    price: "Ksh 1,500,000",
+    price: "Ksh 3,000,000",
     icon: MedalIcon,
     color: "secondary",
     benefits: [
@@ -48,7 +47,7 @@ const sponsorPackages = [
   },
   {
     name: "Bronze Sponsor",
-    price: "Ksh 500,000",
+    price: "Ksh 1,000,000",
     icon: LightningIcon,
     color: "primary",
     benefits: [
