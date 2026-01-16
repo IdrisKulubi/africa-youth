@@ -45,7 +45,7 @@ export default function ContactPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid sm:grid-cols-3 gap-4">
                         <a
-                            href="mailto:zenforwardafrica9@gmail.com"
+                            href="mailto:info@zenforwardafrica.org"
                             className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all group"
                         >
                             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <span className="block text-sm text-muted-foreground">Email</span>
-                                <span className="font-medium text-foreground">zenforwardafrica9@gmail.com</span>
+                                <span className="font-medium text-foreground">info@zenforwardafrica.org</span>
                             </div>
                         </a>
 

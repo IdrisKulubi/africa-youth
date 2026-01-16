@@ -61,7 +61,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Email</span>
-                    <span className="font-medium text-foreground">zenforwardafrica9@gmail.com</span>
+                    <span className="font-medium text-foreground">info@zenforwardafrica.org</span>
                   </div>
                 </a>
 

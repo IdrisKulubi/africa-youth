@@ -317,7 +317,6 @@ export default function AboutSection() {
                 Organized In Partnership With
               </h4>
               <div className="flex flex-wrap gap-4 items-center">
-                <span className="bg-muted px-4 py-2 rounded-lg font-medium text-sm">Nation Media Group</span>
                 <span className="bg-muted px-4 py-2 rounded-lg font-medium text-sm">Zen Forward Africa</span>
                 <span className="text-muted-foreground text-sm italic">+ Other Strategic Partners</span>
               </div>
