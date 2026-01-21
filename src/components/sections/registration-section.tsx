@@ -1,14 +1,16 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useTransition } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircleIcon, CalendarIcon, MapPinIcon, UsersIcon, TicketIcon, WalletIcon } from "@phosphor-icons/react"
+import { CheckCircleIcon, CalendarIcon, MapPinIcon, TicketIcon, SpinnerGapIcon } from "@phosphor-icons/react"
+import { toast } from "sonner"
+import { registerUser } from "@/lib/actions/registration"
 
 // Register ScrollTrigger
 if (typeof window !== "undefined") {
@@ -26,6 +28,8 @@ const eventBenefits = [
 
 export default function RegistrationSection() {
   const [ticketType, setTicketType] = useState<"free" | "paid">("free")
+  const [isPending, startTransition] = useTransition()
+  const [isSuccess, setIsSuccess] = useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -97,8 +101,36 @@ export default function RegistrationSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Registration submitted:", { ...formData, ticketType })
-    alert("Thank you for your registration! We will send you a confirmation email shortly.")
+
+    // Validate required fields
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.category) {
+      toast.error("Please fill in all required fields")
+      return
+    }
+
+    startTransition(async () => {
+      const result = await registerUser({
+        ...formData,
+        ticketType,
+      })
+
+      if (result.success) {
+        toast.success(result.message)
+        setIsSuccess(true)
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          organization: "",
+          role: "",
+          category: "",
+        })
+      } else {
+        toast.error(result.message)
+      }
+    })
   }
 
   return (
@@ -292,8 +324,22 @@ export default function RegistrationSection() {
               </div>
 
               <div className="pt-4 border-t border-border">
-                <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20">
-                  {ticketType === 'free' ? 'Confirm Free Registration' : 'Proceed to Payment'}
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isPending}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20 disabled:opacity-70"
+                >
+                  {isPending ? (
+                    <>
+                      <SpinnerGapIcon className="w-5 h-5 mr-2 animate-spin" />
+                      Processing...
+                    </>
+                  ) : ticketType === 'free' ? (
+                    'Confirm Free Registration'
+                  ) : (
+                    'Proceed to Payment'
+                  )}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center mt-3">
                   By registering, you agree to our Terms of Service and Privacy Policy.
