@@ -15,7 +15,7 @@ export const registrations = pgTable("registrations", {
     role: varchar("role", { length: 100 }),
 
     // Registration Details
-    category: varchar("category", { length: 50 }).notNull(), // student, professional, business, government, media
+    category: varchar("category", { length: 50 }).notNull(), // student, professional, entrepreneur, ngo, government, media, contestant
     ticketType: varchar("ticket_type", { length: 20 }).notNull().default("free"), // free or paid
 
     // Status Tracking

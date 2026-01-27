@@ -149,9 +149,9 @@ export default function RegistrationSection() {
             Secure Your <span className="text-primary">Spot</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join 150+ participants at this transformative event.
+            Join 500+ participants at this transformative event.
             <br />
-            <span className="font-medium text-foreground">Limited to 300 slots only.</span>
+            <span className="font-medium text-foreground">Limited to 500 slots only.</span>
           </p>
         </div>
 
@@ -177,7 +177,7 @@ export default function RegistrationSection() {
               >
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-bold text-lg">General Delegate</span>
-                  <span className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full">200 Slots</span>
+                  <span className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full">400 Slots</span>
                 </div>
                 <div className="text-2xl font-bold text-primary mb-1">Ksh 1,000 <span className="text-sm text-muted-foreground font-normal">/ day</span></div>
                 <p className="text-sm text-muted-foreground">Full access for professionals and general attendees.</p>
@@ -300,6 +300,7 @@ export default function RegistrationSection() {
                       <SelectItem value="student">Student</SelectItem>
                       <SelectItem value="professional">Professional</SelectItem>
                       <SelectItem value="entrepreneur">Entrepreneur</SelectItem>
+                      <SelectItem value="contestant">Contestant</SelectItem>
                       <SelectItem value="ngo">NGO Representative</SelectItem>
                       <SelectItem value="government">Government Official</SelectItem>
                       <SelectItem value="media">Media / Journalist</SelectItem>
