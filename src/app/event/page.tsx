@@ -10,12 +10,12 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
     title: "AYBCIF 2026 Event - Sustainable Futures",
-    description: "Join AYBCIF 2026 from May 27-29 in Nairobi, Kenya. Experience three days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
+    description: "Join AYBCIF 2026 from September 24-25 in Nairobi, Kenya. Experience two days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
     keywords: [
         ...SITE_CONFIG.keywords,
         "AYBCIF 2026",
         "Nairobi Event",
-        "May 2026",
+        "September 2026",
         "Climate Forum",
         "Youth Conference",
         "Business Summit",
@@ -65,7 +65,7 @@ export default function EventPage() {
                             <Calendar className="w-6 h-6 text-accent" />
                             <div className="text-left">
                                 <p className="text-white/60 text-sm">Date</p>
-                                <p className="text-white font-semibold">28-29 May 2026</p>
+                                <p className="text-white font-semibold">24-25 September 2026</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
@@ -153,7 +153,7 @@ export default function EventPage() {
                                     <Calendar className="w-5 h-5 text-accent mt-1" />
                                     <div>
                                         <p className="font-semibold">Dates</p>
-                                        <p className="text-muted-foreground">28th - 29th May 2026</p>
+                                        <p className="text-muted-foreground">24th - 25th September 2026</p>
                                     </div>
                                 </div>
                             </div>

@@ -12,8 +12,8 @@ if (typeof window !== "undefined") {
 }
 
 const days = [
-  { id: "day1", label: "Day 1 - May 28" },
-  { id: "day2", label: "Day 2 - May 29" },
+  { id: "day1", label: "Day 1 - Sep 24" },
+  { id: "day2", label: "Day 2 - Sep 25" },
   { id: "gala", label: "Gala Night" },
 ]
 

@@ -116,9 +116,9 @@ export function generateEventSchema() {
         "@context": "https://schema.org",
         "@type": "Event",
         name: "Africa Youth, Business & Climate Innovation Forum 2026",
-        description: "A three-day forum bringing together African youth, business leaders, and climate experts to drive sustainable innovation and economic growth.",
-        startDate: "2026-05-27T09:00:00+03:00",
-        endDate: "2026-05-29T18:00:00+03:00",
+        description: "A two-day forum bringing together African youth, business leaders, and climate experts to drive sustainable innovation and economic growth.",
+        startDate: "2026-09-24T09:00:00+03:00",
+        endDate: "2026-09-25T18:00:00+03:00",
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         location: {
