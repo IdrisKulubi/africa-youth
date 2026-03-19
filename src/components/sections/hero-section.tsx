@@ -70,7 +70,7 @@ export default function HeroSection() {
                 <div className="flex flex-wrap items-center justify-center gap-6 mb-10 animate-fade-in-up animation-delay-300">
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
                         <CalendarIcon className="w-5 h-5 text-accent" />
-                        <span className="text-white font-medium">28th - 29th May 2026</span>
+                        <span className="text-white font-medium">24th - 25th September 2026</span>
                     </div>
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
                         <MapPinIcon className="w-5 h-5 text-accent" />
