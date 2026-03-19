@@ -73,7 +73,7 @@ export default function RegistrationConfirmationEmail({
 
                             <Row style={detailRow}>
                                 <Column style={detailLabel}>📅 Date</Column>
-                                <Column style={detailValue}>May 28-29, 2026</Column>
+                                <Column style={detailValue}>24th - 25th September 2026</Column>
                             </Row>
 
                             <Row style={detailRow}>
@@ -161,7 +161,7 @@ export default function RegistrationConfirmationEmail({
                         </Text>
 
                         <Text style={footerNote}>
-                            © 2026 Zen Forward Africa. All rights reserved.
+                            © {new Date().getFullYear()} Zen Forward Africa. All rights reserved.
                             <br />
                             Nairobi, Kenya
                         </Text>

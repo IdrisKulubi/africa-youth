@@ -203,7 +203,7 @@ export default function RegistrationSection() {
             <div className="flex items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start">
               <div className="flex items-center gap-2">
                 <CalendarIcon className="w-4 h-4" />
-                <span>May 28-29, 2026</span>
+                <span>24th - 25th September 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPinIcon className="w-4 h-4" />
