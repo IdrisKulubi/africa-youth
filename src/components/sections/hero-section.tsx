@@ -14,7 +14,7 @@ export default function HeroSection() {
     })
 
     useEffect(() => {
-        const targetDate = new Date("2026-05-27T09:00:00").getTime()
+        const targetDate = new Date("2026-09-24T09:00:00").getTime()
 
         const interval = setInterval(() => {
             const now = new Date().getTime()
