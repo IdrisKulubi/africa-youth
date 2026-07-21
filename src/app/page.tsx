@@ -11,7 +11,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
   title: "Africa Youth, Business & Climate Innovation Forum 2026",
-  description: "Join AYBCIF 2026 in Nairobi, Kenya. Three days of innovation, networking, and collaboration bringing together 2,000+ African youth, business leaders, and climate experts.",
+  description: "Join AYBCIF 2026 as a webinar. Two days of innovation, networking, and collaboration bringing together 2,000+ African youth, business leaders, and climate experts.",
   keywords: [
     ...SITE_CONFIG.keywords,
     "Sustainable Futures",

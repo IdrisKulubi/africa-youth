@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import Image from "next/image"
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, PaperPlaneRightIcon, InstagramLogoIcon, TwitterLogoIcon } from "@phosphor-icons/react"
 
 const socialLinks = [
@@ -84,7 +83,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <span className="block text-sm text-muted-foreground">Venue Location</span>
-                    <span className="font-medium text-foreground">Nairobi, Kenya</span>
+                    <span className="font-medium text-foreground">Webinar</span>
                   </div>
                 </div>
               </div>
@@ -108,14 +107,12 @@ export default function ContactSection() {
             </div>
 
             {/* Map Placeholder */}
-            <div className="rounded-xl overflow-hidden border border-border aspect-video bg-muted">
-              <Image
-                src="/placeholder.svg"
-                alt="Venue Location Map"
-                className="w-full h-full object-cover"
-                width={600}
-                height={400}
-              />
+            <div className="rounded-xl overflow-hidden border border-border aspect-video bg-muted flex items-center justify-center">
+              <div className="text-center p-6">
+                <MapPinIcon className="w-10 h-10 text-primary mx-auto mb-2" />
+                <p className="font-medium text-foreground">Webinar</p>
+                <p className="text-sm text-muted-foreground">Join online from anywhere</p>
+              </div>
             </div>
           </div>
 

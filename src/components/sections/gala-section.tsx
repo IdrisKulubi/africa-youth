@@ -51,7 +51,7 @@ export default function GalaSection() {
                 <MapPinIcon className="w-5 h-5 text-accent" />
                 <div>
                   <span className="block text-sm text-background/60">Venue</span>
-                  <span className="font-semibold">Nairobi, Kenya</span>
+                  <span className="font-semibold">Webinar</span>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-background/10 rounded-xl p-4">

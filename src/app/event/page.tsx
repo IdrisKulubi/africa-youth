@@ -10,11 +10,11 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
     title: "AYBCIF 2026 Event - Sustainable Futures",
-    description: "Join AYBCIF 2026 from September 24-25 in Nairobi, Kenya. Experience two days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
+    description: "Join AYBCIF 2026 from September 24-25 as a webinar. Experience two days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
     keywords: [
         ...SITE_CONFIG.keywords,
         "AYBCIF 2026",
-        "Nairobi Event",
+        "Webinar",
         "September 2026",
         "Climate Forum",
         "Youth Conference",
@@ -72,7 +72,7 @@ export default function EventPage() {
                             <MapPin className="w-6 h-6 text-accent" />
                             <div className="text-left">
                                 <p className="text-white/60 text-sm">Location</p>
-                                <p className="text-white font-semibold">Nairobi, Kenya</p>
+                                <p className="text-white font-semibold">Webinar</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
@@ -137,16 +137,15 @@ export default function EventPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold">Venue</h2>
                             <p className="text-lg text-muted-foreground">
-                                The forum will be held at a premium conference venue in Nairobi, Kenya's vibrant capital city.
-                                The location offers state-of-the-art facilities, easy accessibility, and a conducive environment
-                                for networking and collaboration.
+                                AYBCIF 2026 will be hosted as a webinar, bringing youth leaders, business experts, and climate
+                                champions together online for keynotes, workshops, and networking — accessible from anywhere.
                             </p>
                             <div className="space-y-3">
                                 <div className="flex items-start gap-3">
                                     <MapPin className="w-5 h-5 text-accent mt-1" />
                                     <div>
-                                        <p className="font-semibold">Address</p>
-                                        <p className="text-muted-foreground">To be announced</p>
+                                        <p className="font-semibold">Format</p>
+                                        <p className="text-muted-foreground">Webinar</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -160,7 +159,6 @@ export default function EventPage() {
                         </div>
                         <div className="aspect-video rounded-2xl bg-muted flex items-center justify-center">
                             <MapPin className="w-16 h-16 text-muted-foreground" />
-                            {/* Placeholder for map or venue image */}
                         </div>
                     </div>
                 </div>

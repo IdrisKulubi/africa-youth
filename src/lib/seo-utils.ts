@@ -19,8 +19,7 @@ export const SITE_CONFIG = {
         "Green Economy",
         "Youth Leadership",
         "Climate Tech",
-        "Nairobi",
-        "Kenya",
+        "Webinar",
         "2026",
     ],
 }
@@ -120,15 +119,11 @@ export function generateEventSchema() {
         startDate: "2026-09-24T09:00:00+03:00",
         endDate: "2026-09-25T18:00:00+03:00",
         eventStatus: "https://schema.org/EventScheduled",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
         location: {
-            "@type": "Place",
-            name: "To be announced",
-            address: {
-                "@type": "PostalAddress",
-                addressLocality: "Nairobi",
-                addressCountry: "KE",
-            },
+            "@type": "VirtualLocation",
+            name: "Webinar",
+            url: SITE_CONFIG.url,
         },
         organizer: {
             "@type": "Organization",

@@ -62,7 +62,7 @@ export default function NewsPage() {
                                     </h3>
                                     <p className="text-muted-foreground">
                                         We're excited to announce that registration for AYBCIF 2026 is now live.
-                                        Join us in Nairobi for three days of innovation...
+                                        Join us for the webinar — two days of innovation...
                                     </p>
                                     <a href="#" className="inline-flex items-center text-accent font-medium hover:underline">
                                         Read more →

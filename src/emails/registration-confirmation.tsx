@@ -78,7 +78,7 @@ export default function RegistrationConfirmationEmail({
 
                             <Row style={detailRow}>
                                 <Column style={detailLabel}>📍 Location</Column>
-                                <Column style={detailValue}>Nairobi, Kenya</Column>
+                                <Column style={detailValue}>Webinar</Column>
                             </Row>
 
                             <Row style={detailRow}>
@@ -120,7 +120,7 @@ export default function RegistrationConfirmationEmail({
                         </Section>
 
                         <Text style={paragraph}>
-                            We'll send you more details closer to the event, including the venue address,
+                            We'll send you more details closer to the event, including the webinar link,
                             agenda updates, and networking opportunities.
                         </Text>
 
@@ -132,7 +132,7 @@ export default function RegistrationConfirmationEmail({
                         </Text>
 
                         <Text style={signoff}>
-                            See you in Nairobi
+                            See you at the webinar
                             <br />
                             <strong>The Zen Forward Africa Team</strong>
                         </Text>

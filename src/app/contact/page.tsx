@@ -6,13 +6,13 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
     title: "Contact Us",
-    description: "Get in touch with Zen Forward Africa. Contact us for partnerships, sponsorship inquiries, media requests, or general information about AYBCIF 2026. Office hours: Mon-Fri, 9AM-5PM EAT. Located in Nairobi, Kenya.",
+    description: "Get in touch with Zen Forward Africa. Contact us for partnerships, sponsorship inquiries, media requests, or general information about AYBCIF 2026. Office hours: Mon-Fri, 9AM-5PM EAT. Event format: Webinar.",
     keywords: [
         ...SITE_CONFIG.keywords,
         "Contact",
         "Get in Touch",
         "Partnership Inquiry",
-        "Nairobi Office",
+        "Webinar",
         "Contact Information",
     ],
     canonical: `${SITE_CONFIG.url}/contact`,
@@ -83,7 +83,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <span className="block text-sm text-muted-foreground">Event Location</span>
-                                <span className="font-medium text-foreground">Nairobi, Kenya</span>
+                                <span className="font-medium text-foreground">Webinar</span>
                             </div>
                         </div>
                     </div>

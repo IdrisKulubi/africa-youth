@@ -74,7 +74,7 @@ export default function HeroSection() {
                     </div>
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2.5 hover:bg-white/20 transition-colors">
                         <MapPinIcon className="w-5 h-5 text-accent" />
-                        <span className="text-white font-medium">Nairobi, Kenya</span>
+                        <span className="text-white font-medium">Webinar</span>
                     </div>
                 </div>
 

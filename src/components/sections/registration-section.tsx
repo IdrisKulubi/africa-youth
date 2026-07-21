@@ -207,7 +207,7 @@ export default function RegistrationSection() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPinIcon className="w-4 h-4" />
-                <span>Nairobi, Kenya</span>
+                <span>Webinar</span>
               </div>
             </div>
 
