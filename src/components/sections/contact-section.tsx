@@ -82,7 +82,7 @@ export default function ContactSection() {
                     <MapPinIcon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <span className="block text-sm text-muted-foreground">Venue Location</span>
+                    <span className="block text-sm text-muted-foreground">Event Format</span>
                     <span className="font-medium text-foreground">Webinar</span>
                   </div>
                 </div>
@@ -106,13 +106,10 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="rounded-xl overflow-hidden border border-border aspect-video bg-muted flex items-center justify-center">
-              <div className="text-center p-6">
-                <MapPinIcon className="w-10 h-10 text-primary mx-auto mb-2" />
-                <p className="font-medium text-foreground">Webinar</p>
-                <p className="text-sm text-muted-foreground">Join online from anywhere</p>
-              </div>
+            {/* Webinar info */}
+            <div className="rounded-xl border border-border p-6 bg-muted/50">
+              <p className="font-medium text-foreground mb-1">Online webinar</p>
+              <p className="text-sm text-muted-foreground">Join link shared after registration</p>
             </div>
           </div>
 

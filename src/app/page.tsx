@@ -1,7 +1,6 @@
 import HeroSection from "@/components/sections/hero-section"
 import AboutSection from "@/components/sections/about-section"
 import ProgrammeSection from "@/components/sections/programme-section"
-import ContestSection from "@/components/sections/contest-section"
 import SponsorshipSection from "@/components/sections/sponsorship-section"
 import RegistrationSection from "@/components/sections/registration-section"
 import Footer from "@/components/sections/footer"
@@ -37,7 +36,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ProgrammeSection />
-      <ContestSection />
       <SponsorshipSection />
       <RegistrationSection />
       <Footer />

@@ -13,7 +13,7 @@ const criteria = [
   "Focus on climate, sustainability, or green innovation",
   "Registered or operating in Africa",
   "Scalable business model with measurable impact",
-  "Commitment to attend AYBCIF 2026 in person",
+  "Commitment to attend the AYBCIF 2026 webinar online",
 ]
 
 const successStories = [
@@ -51,8 +51,8 @@ export default function InnovationHubSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Startup Application:", formData)
-    alert("Application received! We will review your startup and get back to you.")
+    console.log("Speaker Application:", formData)
+    alert("Application received! We will review your request and get back to you.")
     setOpen(false)
   }
 
@@ -68,11 +68,11 @@ export default function InnovationHubSection() {
             Innovation Hub
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Startup <span className="text-primary">Showcase</span>
+            Speak at the <span className="text-primary">Webinar</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A platform for young African innovators to pitch their green business ideas to investors, mentors, and
-            industry leaders.
+            A platform for young African innovators to share their green business ideas with investors, mentors,
+            and industry leaders — live during the webinar.
           </p>
         </div>
 
@@ -97,19 +97,19 @@ export default function InnovationHubSection() {
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-lg rounded-xl shadow-lg shadow-primary/20">
-                  Apply Now <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  Apply to Speak <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                  <DialogTitle>Apply for Startup Showcase</DialogTitle>
+                  <DialogTitle>Apply to Speak at the Webinar</DialogTitle>
                   <DialogDescription>
-                    Tell us a bit about your innovation. We'll contact you for the full pitch deck.
+                    Tell us about your innovation. We will contact you with next steps.
                   </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                   <div className="space-y-2">
-                    <Label htmlFor="startupName">Startup Name</Label>
+                    <Label htmlFor="startupName">Startup / Project Name</Label>
                     <Input
                       id="startupName"
                       value={formData.startupName}
@@ -162,7 +162,7 @@ export default function InnovationHubSection() {
               <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
                 <TrophyIcon className="w-6 h-6 text-accent-foreground" weight="fill" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">What Selected Startups Get</h3>
+              <h3 className="text-xl font-bold text-foreground">What Selected Speakers Get</h3>
             </div>
             <ul className="space-y-6">
               <li className="flex items-start gap-4">
@@ -170,8 +170,8 @@ export default function InnovationHubSection() {
                   1
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground text-lg mb-1">Pitch to Investors</p>
-                  <p className="text-sm text-muted-foreground">5-minute pitch opportunity to a panel of top African investors and VCs.</p>
+                  <p className="font-semibold text-foreground text-lg mb-1">Live Webinar Slot</p>
+                  <p className="text-sm text-muted-foreground">Present your innovation to investors, mentors, and 2,000+ online attendees.</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -179,8 +179,8 @@ export default function InnovationHubSection() {
                   2
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground text-lg mb-1">Exhibition Space</p>
-                  <p className="text-sm text-muted-foreground">Free booth to showcase your product to over 2000 attendees.</p>
+                  <p className="font-semibold text-foreground text-lg mb-1">Media Exposure</p>
+                  <p className="text-sm text-muted-foreground">Featured across event channels and partner media coverage.</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -189,7 +189,7 @@ export default function InnovationHubSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-lg mb-1">Mentorship</p>
-                  <p className="text-sm text-muted-foreground">One-on-one sessions with industry leaders and business coaches.</p>
+                  <p className="text-sm text-muted-foreground">Virtual sessions with industry leaders and business coaches.</p>
                 </div>
               </li>
             </ul>

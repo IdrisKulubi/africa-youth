@@ -43,7 +43,7 @@ export default function SponsorshipPage() {
                         <a href="#sponsors" className="px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-full hover:bg-accent/90 transition-colors">
                             View Packages
                         </a>
-                        <a href="#contact" className="px-6 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-colors backdrop-blur-sm">
+                        <a href="/contact" className="px-6 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-colors backdrop-blur-sm">
                             Contact Us
                         </a>
                     </div>
@@ -69,10 +69,10 @@ export default function SponsorshipPage() {
                             </p>
                         </div>
                         <div className="p-6 rounded-2xl bg-card border border-border text-center hover:border-primary/50 transition-colors">
-                            <div className="text-4xl font-bold text-primary mb-2">3 Days</div>
+                            <div className="text-4xl font-bold text-primary mb-2">2 Days</div>
                             <h3 className="text-lg font-semibold mb-2">Of Exposure</h3>
                             <p className="text-muted-foreground text-sm">
-                                Including the exclusive Gala Night event
+                                Brand visibility across the full webinar programme
                             </p>
                         </div>
                     </div>

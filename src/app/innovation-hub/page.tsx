@@ -6,15 +6,13 @@ import { generateMetadata, SITE_CONFIG } from "@/lib/seo-utils"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
-    title: "Innovation Hub & Startup Showcase",
-    description: "Apply for the AYBCIF Innovation Hub to showcase your climate-focused startup to investors, corporate partners, and potential customers. Access mentorship, funding opportunities, and media exposure for African youth-led climate tech ventures.",
+    title: "Innovation Hub — Speak at the Webinar",
+    description: "Apply to speak at AYBCIF 2026 and share your climate-focused startup with investors, corporate partners, and webinar attendees. Virtual mentorship and media exposure for African youth-led climate ventures.",
     keywords: [
         ...SITE_CONFIG.keywords,
-        "Startup Showcase",
         "Climate Tech Startups",
         "Innovation Hub",
-        "Startup Funding",
-        "Pitch Competition",
+        "Webinar Speakers",
         "African Startups",
         "Climate Solutions",
     ],
@@ -35,10 +33,10 @@ export default function InnovationHubPage() {
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-                        Innovation Hub & <span className="text-accent">Startup Showcase</span>
+                        Innovation Hub — <span className="text-accent">Speak at the Webinar</span>
                     </h1>
                     <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
-                        Empowering climate-focused startups to scale and attract investment
+                        Empowering climate-focused startups to share their story and connect with investors online
                     </p>
                 </div>
             </section>
@@ -48,9 +46,9 @@ export default function InnovationHubPage() {
                 <div className="max-w-5xl mx-auto text-center space-y-8">
                     <h2 className="text-3xl md:text-4xl font-bold">What is the Innovation Hub?</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        The AYBCIF Innovation Hub is a dedicated platform for African youth-led startups working
+                        The AYBCIF Innovation Hub is a platform for African youth-led startups working
                         on climate solutions, sustainable technologies, and green business models. Selected startups
-                        will showcase their innovations to investors, corporate partners, and potential customers.
+                        will present live during the webinar to investors, corporate partners, and attendees.
                     </p>
                 </div>
             </section>
@@ -134,7 +132,7 @@ export default function InnovationHubPage() {
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">Investor Access</h3>
                                 <p className="text-muted-foreground">
-                                    Pitch directly to impact investors, VCs, and angel investors actively seeking climate solutions
+                                    Present live to impact investors, VCs, and angel investors actively seeking climate solutions
                                 </p>
                             </div>
                         </div>
@@ -162,7 +160,7 @@ export default function InnovationHubPage() {
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">Media Exposure</h3>
                                 <p className="text-muted-foreground">
-                                    Showcase your innovation to thousands of attendees and media coverage across Africa
+                                    Reach thousands of online attendees and media coverage across Africa
                                 </p>
                             </div>
                         </div>
@@ -217,8 +215,8 @@ export default function InnovationHubPage() {
                                 <span className="font-semibold">April 15, 2026</span>
                             </div>
                             <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">Innovation Hub Event</span>
-                                <span className="font-semibold">May 27-29, 2026</span>
+                                <span className="text-muted-foreground">Webinar Dates</span>
+                                <span className="font-semibold">24-25 September 2026</span>
                             </div>
                         </div>
                     </div>

@@ -82,7 +82,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <div>
-                                <span className="block text-sm text-muted-foreground">Event Location</span>
+                                <span className="block text-sm text-muted-foreground">Event Format</span>
                                 <span className="font-medium text-foreground">Webinar</span>
                             </div>
                         </div>

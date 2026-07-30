@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { CheckIcon, StarIcon, MedalIcon, LightningIcon, BuildingIcon, ArrowRightIcon } from "@phosphor-icons/react"
+import { CheckIcon, StarIcon, MedalIcon, LightningIcon, ArrowRightIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -19,13 +19,13 @@ const sponsorPackages = [
     icon: StarIcon,
     color: "accent",
     benefits: [
-      "Premium logo placement on all materials",
+      "Premium logo placement on webinar stream and website",
       "Keynote speaking opportunity (10 min)",
-      "VIP table at Gala Night (10 seats)",
-      "Exhibition booth (premium location)",
+      "Featured sponsor segment during the webinar",
       "Social media feature posts (5x)",
-      "Full-page ad in event program",
+      "Full-page ad in digital event program",
       "Media mentions in press releases",
+      "Access to virtual networking sessions",
     ],
     featured: true,
   },
@@ -35,12 +35,11 @@ const sponsorPackages = [
     icon: MedalIcon,
     color: "secondary",
     benefits: [
-      "Logo on event materials & banners",
+      "Logo on webinar stream, website & materials",
       "Panel speaking opportunity",
-      "Reserved table at Gala (6 seats)",
-      "Exhibition booth (standard)",
+      "Sponsor mention during sessions",
       "Social media mentions (3x)",
-      "Half-page ad in event program",
+      "Half-page ad in digital event program",
       "Access to participant networking",
     ],
     featured: false,
@@ -51,26 +50,12 @@ const sponsorPackages = [
     icon: LightningIcon,
     color: "primary",
     benefits: [
-      "Logo on event website & program",
+      "Logo on event website & digital program",
       "Workshop co-hosting opportunity",
-      "Gala Night tickets (4 seats)",
+      "Sponsor logo on webinar slides",
       "Social media mentions (2x)",
       "Quarter-page ad in program",
-      "Networking session access",
-    ],
-    featured: false,
-  },
-  {
-    name: "Exhibitor Booth",
-    price: "Ksh 100,000",
-    icon: BuildingIcon,
-    color: "muted",
-    benefits: [
-      "Exhibition space for 3 days",
-      "Logo on event website",
-      "Gala Night tickets (2 seats)",
-      "Social media mention",
-      "Networking access",
+      "Virtual networking session access",
     ],
     featured: false,
   },
@@ -168,7 +153,7 @@ export default function SponsorshipSection() {
         </div>
 
         {/* Packages Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {sponsorPackages.map((pkg) => {
             const IconComponent = pkg.icon
             return (
@@ -212,7 +197,7 @@ export default function SponsorshipSection() {
                     }`}
                   asChild
                 >
-                  <Link href="#contact">
+                  <Link href="/contact">
                     Enquire Now <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
@@ -228,7 +213,7 @@ export default function SponsorshipSection() {
             Have specific needs? Let{"'"}s create a tailored partnership that works for your organization.
           </p>
           <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-            <Link href="#contact">
+            <Link href="/contact">
               Contact Our Team <ArrowRightIcon className="w-4 h-4 ml-2" />
             </Link>
           </Button>

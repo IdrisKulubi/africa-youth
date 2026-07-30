@@ -3,14 +3,13 @@ import Footer from "@/components/sections/footer"
 import ProgrammeSection from "@/components/sections/programme-section"
 
 import RegistrationSection from "@/components/sections/registration-section"
-import InnovationHubSection from "@/components/sections/innovation-hub-section"
-import { Calendar, MapPin, Users } from "lucide-react"
+import { Calendar, MapPin, Users, Video } from "lucide-react"
 import { generateMetadata, generateEventSchema, SITE_CONFIG } from "@/lib/seo-utils"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
     title: "AYBCIF 2026 Event - Sustainable Futures",
-    description: "Join AYBCIF 2026 from September 24-25 as a webinar. Experience two days of keynotes, workshops, innovation showcases, and networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
+    description: "Join AYBCIF 2026 from September 24-25 as a webinar. Experience two days of keynotes, workshops, and virtual networking with 2,000+ attendees including youth leaders, business experts, and climate champions.",
     keywords: [
         ...SITE_CONFIG.keywords,
         "AYBCIF 2026",
@@ -19,7 +18,6 @@ export const metadata: Metadata = generateMetadata({
         "Climate Forum",
         "Youth Conference",
         "Business Summit",
-        "Innovation Showcase",
     ],
     canonical: `${SITE_CONFIG.url}/event`,
 })
@@ -71,7 +69,7 @@ export default function EventPage() {
                         <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
                             <MapPin className="w-6 h-6 text-accent" />
                             <div className="text-left">
-                                <p className="text-white/60 text-sm">Location</p>
+                                <p className="text-white/60 text-sm">Format</p>
                                 <p className="text-white font-semibold">Webinar</p>
                             </div>
                         </div>
@@ -95,7 +93,7 @@ export default function EventPage() {
                         We're bringing together Africa's brightest minds to explore how sustainable business models can
                         drive economic growth while addressing climate challenges.
                     </p>
-                    <div className="grid md:grid-cols-3 gap-8 mt-12">
+                    <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-3xl mx-auto">
                         <div className="p-6 rounded-2xl bg-card border border-border">
                             <h3 className="text-2xl font-bold text-accent mb-3">Day 1</h3>
                             <h4 className="text-lg font-semibold mb-2">Youth Leadership</h4>
@@ -110,13 +108,6 @@ export default function EventPage() {
                                 Sustainable business models, investment opportunities, and partnerships
                             </p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-card border border-border">
-                            <h3 className="text-2xl font-bold text-accent mb-3">Day 3</h3>
-                            <h4 className="text-lg font-semibold mb-2">Innovation Showcase</h4>
-                            <p className="text-muted-foreground">
-                                Startup pitches, networking, and closing gala dinner
-                            </p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -124,41 +115,31 @@ export default function EventPage() {
             {/* Programme Section */}
             <ProgrammeSection />
 
-            {/* Speakers Section */}
-
-
-            {/* Participating Startups */}
-            <InnovationHubSection />
-
-            {/* Venue Information */}
+            {/* How to Join */}
             <section className="py-20 px-4 bg-card/50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold">Venue</h2>
-                            <p className="text-lg text-muted-foreground">
-                                AYBCIF 2026 will be hosted as a webinar, bringing youth leaders, business experts, and climate
-                                champions together online for keynotes, workshops, and networking — accessible from anywhere.
-                            </p>
-                            <div className="space-y-3">
-                                <div className="flex items-start gap-3">
-                                    <MapPin className="w-5 h-5 text-accent mt-1" />
-                                    <div>
-                                        <p className="font-semibold">Format</p>
-                                        <p className="text-muted-foreground">Webinar</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Calendar className="w-5 h-5 text-accent mt-1" />
-                                    <div>
-                                        <p className="font-semibold">Dates</p>
-                                        <p className="text-muted-foreground">24th - 25th September 2026</p>
-                                    </div>
-                                </div>
+                <div className="max-w-3xl mx-auto text-center space-y-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-2">
+                        <Video className="w-8 h-8 text-primary" />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold">How to Join</h2>
+                    <p className="text-lg text-muted-foreground">
+                        AYBCIF 2026 is a fully online webinar. Register below and we will email you the join link
+                        and session details closer to the event. No travel required — participate from anywhere.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-6 pt-4">
+                        <div className="flex items-center gap-3 text-left">
+                            <MapPin className="w-5 h-5 text-accent shrink-0" />
+                            <div>
+                                <p className="font-semibold">Format</p>
+                                <p className="text-muted-foreground text-sm">Webinar</p>
                             </div>
                         </div>
-                        <div className="aspect-video rounded-2xl bg-muted flex items-center justify-center">
-                            <MapPin className="w-16 h-16 text-muted-foreground" />
+                        <div className="flex items-center gap-3 text-left">
+                            <Calendar className="w-5 h-5 text-accent shrink-0" />
+                            <div>
+                                <p className="font-semibold">Dates</p>
+                                <p className="text-muted-foreground text-sm">24th - 25th September 2026</p>
+                            </div>
                         </div>
                     </div>
                 </div>

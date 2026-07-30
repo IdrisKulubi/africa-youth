@@ -116,9 +116,9 @@ export default function AboutForumPage() {
                             partnerships, launched ventures, and influenced policy decisions that promote sustainable development.
                         </p>
                         <p>
-                            The 2026 edition marks a significant milestone as we expand our focus to include more hands-on
-                            innovation showcases, startup pitch competitions, and direct investment opportunities for
-                            climate-focused ventures led by African youth.
+                            The 2026 edition is delivered as a fully online webinar, bringing together youth innovators,
+                            business leaders, and climate experts for two days of keynotes, panels, workshops, and
+                            virtual networking — accessible from anywhere across Africa and beyond.
                         </p>
                     </div>
                 </div>

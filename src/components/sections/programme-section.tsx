@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { ClockIcon, CoffeeIcon, UsersIcon, MicrophoneIcon, MedalIcon, ConfettiIcon } from "@phosphor-icons/react"
+import { ClockIcon, CoffeeIcon, UsersIcon, MicrophoneIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 // Register ScrollTrigger
@@ -14,15 +14,14 @@ if (typeof window !== "undefined") {
 const days = [
   { id: "day1", label: "Day 1 - Sep 24" },
   { id: "day2", label: "Day 2 - Sep 25" },
-  { id: "gala", label: "Gala Night" },
 ]
 
 const programmeData = {
   day1: [
     {
-      time: "08:00 - 09:00",
-      title: "Registration & Networking Breakfast",
-      description: "Participant check-in and exhibition area opens",
+      time: "08:45 - 09:00",
+      title: "Virtual Lobby Opens",
+      description: "Join the webinar platform and connect with fellow participants",
       icon: CoffeeIcon,
       type: "break",
     },
@@ -48,14 +47,14 @@ const programmeData = {
       type: "panel",
     },
     {
-      time: "11:00 - 11:20",
-      title: "Health Break & Exhibition Tour",
+      time: "11:00 - 11:15",
+      title: "Short Break",
       description: "",
       icon: CoffeeIcon,
       type: "break",
     },
     {
-      time: "11:20 - 12:30",
+      time: "11:15 - 12:30",
       title: "Panel II: Climate Finance",
       description: "Climate Finance, Startup Capital & the Path to Green Entrepreneurship",
       icon: UsersIcon,
@@ -63,8 +62,8 @@ const programmeData = {
     },
     {
       time: "12:30 - 13:30",
-      title: "Lunch & Networking",
-      description: "",
+      title: "Break & Virtual Networking",
+      description: "Optional breakout rooms for informal connections",
       icon: CoffeeIcon,
       type: "break",
     },
@@ -84,29 +83,29 @@ const programmeData = {
     },
     {
       time: "16:00 - 17:00",
-      title: "Investor–Innovator Speed Networking",
-      description: "",
+      title: "Virtual Networking Session",
+      description: "Connect with investors, mentors, and fellow innovators online",
       icon: UsersIcon,
       type: "session",
     },
   ],
   day2: [
     {
-      time: "08:00 - 08:45",
-      title: "Breakfast & Innovation Lab Showcase",
+      time: "08:45 - 09:00",
+      title: "Virtual Lobby Opens",
       description: "",
       icon: CoffeeIcon,
       type: "break",
     },
     {
-      time: "08:45 - 09:15",
+      time: "09:00 - 09:30",
       title: "Keynote Address II",
       description: "Scaling Youth-Led Climate Solutions Across Africa",
       icon: MicrophoneIcon,
       type: "session",
     },
     {
-      time: "09:15 - 10:30",
+      time: "09:30 - 10:30",
       title: "Panel III: Youth & Business Innovation",
       description: "Entrepreneurship in the Green Economy",
       icon: UsersIcon,
@@ -114,103 +113,38 @@ const programmeData = {
     },
     {
       time: "10:30 - 11:00",
-      title: "Health Break",
+      title: "Short Break",
       description: "",
       icon: CoffeeIcon,
       type: "break",
     },
     {
       time: "11:00 - 12:30",
-      title: "Startup Pitch Arena – Round One",
-      description: "Young innovators present solutions to an expert judging panel",
-      icon: MedalIcon,
-      type: "showcase",
+      title: "Skill Building Workshops",
+      description: "Climate Storytelling, Fundraising, Market Access (Parallel Tracks)",
+      icon: UsersIcon,
+      type: "workshop",
     },
     {
       time: "12:30 - 13:30",
-      title: "Lunch & Networking",
+      title: "Break & Virtual Networking",
       description: "",
       icon: CoffeeIcon,
       type: "break",
     },
     {
       time: "13:30 - 15:00",
-      title: "Skill Building Workshops",
-      description: "Pitching, Climate Storytelling, Fundraising, Market Access (Parallel Tracks)",
+      title: "Panel IV: Partnerships & Investment",
+      description: "Building cross-sector alliances for climate action and youth enterprise",
       icon: UsersIcon,
-      type: "workshop",
+      type: "panel",
     },
     {
       time: "15:00 - 16:00",
-      title: "Startup Pitch Arena – Final Round",
-      description: "",
-      icon: MedalIcon,
-      type: "showcase",
-    },
-    {
-      time: "16:00 - 17:00",
-      title: "Closing Ceremony & Announcement of Winners",
-      description: "",
-      icon: MedalIcon,
+      title: "Closing Ceremony",
+      description: "Key takeaways, commitments, and next steps for participants",
+      icon: MicrophoneIcon,
       type: "session",
-    },
-  ],
-  gala: [
-    {
-      time: "18:00 - 18:45",
-      title: "Red Carpet & Photography",
-      description: "Guest arrivals, interviews and networking",
-      icon: ConfettiIcon,
-      type: "gala",
-    },
-    {
-      time: "18:45 - 19:00",
-      title: "Opening Remarks",
-      description: "",
-      icon: MicrophoneIcon,
-      type: "gala",
-    },
-    {
-      time: "19:00 - 19:40",
-      title: "Youth Talent & Innovation Performances",
-      description: "Spoken word, music and creative showcases",
-      icon: ConfettiIcon,
-      type: "gala",
-    },
-    {
-      time: "19:40 - 20:20",
-      title: "Gourmet Dinner Service",
-      description: "",
-      icon: CoffeeIcon,
-      type: "gala",
-    },
-    {
-      time: "20:20 - 21:00",
-      title: "Awards Ceremony",
-      description: "Young Innovator, Climate Business Trailblazer, Sustainability Leadership, Social Impact Enterprise Awards",
-      icon: MedalIcon,
-      type: "gala",
-    },
-    {
-      time: "21:00 - 21:30",
-      title: "Guest of Honour Address",
-      description: "",
-      icon: MicrophoneIcon,
-      type: "gala",
-    },
-    {
-      time: "21:30 - 22:30",
-      title: "Live Band & Networking",
-      description: "",
-      icon: ConfettiIcon,
-      type: "gala",
-    },
-    {
-      time: "22:30 - 00:00",
-      title: "Afterparty",
-      description: "DJ Segment & Closing",
-      icon: ConfettiIcon,
-      type: "gala",
     },
   ],
 }
@@ -220,8 +154,6 @@ const typeColors: Record<string, string> = {
   session: "bg-primary/10 text-primary",
   panel: "bg-secondary/20 text-secondary-foreground",
   workshop: "bg-accent/10 text-accent",
-  showcase: "bg-destructive/10 text-destructive",
-  gala: "bg-gradient-to-r from-accent/20 to-primary/20 text-foreground",
 }
 
 export default function ProgrammeSection() {
@@ -304,7 +236,7 @@ export default function ProgrammeSection() {
             Forum <span className="text-primary">Programme</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Three days of inspiration, learning, networking, and celebration.
+            Two days of online sessions — keynotes, panels, workshops, and virtual networking.
           </p>
         </div>
 

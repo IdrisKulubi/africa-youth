@@ -18,12 +18,11 @@ if (typeof window !== "undefined") {
 }
 
 const eventBenefits = [
-  "2-day full access to all sessions",
+  "2-day full access to all webinar sessions",
   "Workshop participation",
-  "Networking sessions with industry leaders",
+  "Virtual networking sessions with industry leaders",
   "Certificate of participation",
-  "Innovation Hub showcase access",
-  "Exclusive event materials",
+  "Exclusive digital event materials",
 ]
 
 export default function RegistrationSection() {
@@ -179,7 +178,7 @@ export default function RegistrationSection() {
                   <span className="font-bold text-lg">General Delegate</span>
                   <span className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full">400 Slots</span>
                 </div>
-                <div className="text-2xl font-bold text-primary mb-1">Ksh 1,000 <span className="text-sm text-muted-foreground font-normal">/ day</span></div>
+                <div className="text-2xl font-bold text-primary mb-1">Ksh 1,000 <span className="text-sm text-muted-foreground font-normal">for the webinar</span></div>
                 <p className="text-sm text-muted-foreground">Full access for professionals and general attendees.</p>
               </div>
             </div>
@@ -300,7 +299,6 @@ export default function RegistrationSection() {
                       <SelectItem value="student">Student</SelectItem>
                       <SelectItem value="professional">Professional</SelectItem>
                       <SelectItem value="entrepreneur">Entrepreneur</SelectItem>
-                      <SelectItem value="contestant">Contestant</SelectItem>
                       <SelectItem value="ngo">NGO Representative</SelectItem>
                       <SelectItem value="government">Government Official</SelectItem>
                       <SelectItem value="media">Media / Journalist</SelectItem>
@@ -316,7 +314,6 @@ export default function RegistrationSection() {
                     <SelectContent>
                       <SelectItem value="attendee">Attendee</SelectItem>
                       <SelectItem value="speaker">Interested in Speaking</SelectItem>
-                      <SelectItem value="exhibitor">Exhibitor</SelectItem>
                       <SelectItem value="volunteer">Volunteer</SelectItem>
                       <SelectItem value="media">Media Coverage</SelectItem>
                     </SelectContent>
